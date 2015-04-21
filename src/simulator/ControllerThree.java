@@ -1,26 +1,14 @@
 package simulator;
 
 import javafx.animation.*;
-import javafx.beans.InvalidationListener;
-import javafx.beans.Observable;
-import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
-import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
-import javafx.scene.transform.Rotate;
-import javafx.util.Duration;
-
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
 
 /**
  *  Controller class for simulatorThreeLayout.fxml. Handles all logic of this specific screen
@@ -31,7 +19,6 @@ public class ControllerThree implements ControlTemp, Initializable, Runnable {
     ScreenController controller;
     BasicIdeaSimulation basicIdeaSimulation;
     Boolean paused = false;
-    Controller controllerClass;
 
     @FXML
     private Button threeSimPauseBtn;
@@ -61,7 +48,6 @@ public class ControllerThree implements ControlTemp, Initializable, Runnable {
     private ImageView dogSpeechBubble;
 
 
-
     /**
      *  Implementation of ControlTemp interface
      * @param screensController
@@ -69,8 +55,6 @@ public class ControllerThree implements ControlTemp, Initializable, Runnable {
     public void setControlParent(ScreenController screensController)
     {
         this.controller = screensController;
-
-
     }
     /**
      *  Implementation of Initializable interface-- connects widgets to their fxml file and adds some listeners for those widgets
@@ -104,8 +88,6 @@ public class ControllerThree implements ControlTemp, Initializable, Runnable {
 
 
     public void run(){
-
-
 
         basicIdeaSimulation = new BasicIdeaSimulation(
                 snakeCryptographer,

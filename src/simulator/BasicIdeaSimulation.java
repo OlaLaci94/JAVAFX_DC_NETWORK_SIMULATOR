@@ -25,7 +25,6 @@ public class BasicIdeaSimulation extends Movement
     StackPane simThreeStackPane;
     TextArea simThreeTextArea;
     String currentText;
-    ExecutorService pool;
     Double textAreaAfterx, textAreax, textAreaDbx;
 
     /**
@@ -65,15 +64,8 @@ public class BasicIdeaSimulation extends Movement
                 "if one of the cryptographers had paid";
         simThreeTextArea.setText(currentText);
 
-        pool = Executors.newSingleThreadExecutor();
+        basicThree0();
 
-        pool.execute(new Runnable() {
-            @Override
-            public void run()
-            {
-                basicThree0();
-            }
-        });
 
     }
 
@@ -323,13 +315,10 @@ public class BasicIdeaSimulation extends Movement
 
                                         tranArrList.get(tranArrList.size()-1).setOnFinished(new EventHandler<ActionEvent>() {
                                             @Override
-                                            public void handle(ActionEvent event) {
-                                                pool.execute(new Runnable() {
-                                                    @Override
-                                                    public void run() {
-                                                        basicThree1();
-                                                    }
-                                                });
+                                            public void handle(ActionEvent event)
+                                            {
+                                                basicThree1();
+
                                             }
                                         });
                                     }

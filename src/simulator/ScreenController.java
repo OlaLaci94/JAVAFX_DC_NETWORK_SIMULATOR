@@ -24,8 +24,9 @@ import java.util.HashMap;
  */
 public class ScreenController extends StackPane
 {
-    private HashMap<String, Node> screenMap  = new HashMap<String, Node>();
+    private HashMap<String, Node> screenMap;
     ControllerThree controllerThree;
+     ControlTemp myControllerTemp;
 
     /**
      *  creates ScreenController object which is of type Stackpane
@@ -33,6 +34,7 @@ public class ScreenController extends StackPane
     protected ScreenController()
     {
         super();
+        screenMap  = new HashMap<String, Node>();
     }
 
     /**
@@ -43,17 +45,10 @@ public class ScreenController extends StackPane
     public void addScreen(String name, Node screen)
     {
         screenMap.put(name,screen);
+        System.out.println("addScreen, name: "+ name);
+        System.out.println("addScreen, screen: "+ screen);
     }
 
-    /**
-     *  returns the specific node name of the current screen
-     * @param name
-     * @return
-     */
-    public Node getCurrentScreen(String name){
-
-        return screenMap.get(name);
-    }
 
     /**
      *  loads screen onto window
@@ -65,19 +60,28 @@ public class ScreenController extends StackPane
     {
         try
         {
-            System.out.println("in loadScreen");
+            System.out.println("in loadScreen, name: "+name);
+            System.out.println("in loadScreen, resource: "+resource);
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(resource));
 
                     Parent loadedScreen = (Parent) fxmlLoader.load();
 
-            ControlTemp myControllerTemp = ((ControlTemp) fxmlLoader.getController());
+             myControllerTemp = ((ControlTemp) fxmlLoader.getController());
             myControllerTemp.setControlParent(this);
             addScreen(name, loadedScreen);
+            System.out.println("loadedScreen: "+ loadedScreen);
+            System.out.println("after addScreen; name: "+name);
             if(resource.equals(Main.threeCrypScreenFile)){
                 System.out.println("in if statemtn");
                 controllerThree = (ControllerThree) fxmlLoader.getController();
 
             }
+//            else if(resource.equals(Main.keyExchangeScreenFile)){
+//                System.out.println("in if(Main.keyExchangeScreenFile");
+//
+//                controllerKeyExchange = (ControllerKeyExchange) fxmlLoader.getController();
+//
+//            }
 
             return true;
         }
@@ -96,6 +100,7 @@ public class ScreenController extends StackPane
 
         System.out.println("in setScreen");
          //checks screen has been previously loaded
+        System.out.println("screenMap: "+screenMap.get(name));
         if(screenMap.get(name)!= null)
         {
             final DoubleProperty opacityProperty = opacityProperty();

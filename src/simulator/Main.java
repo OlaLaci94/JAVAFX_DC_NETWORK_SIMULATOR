@@ -16,6 +16,9 @@ public class Main extends Application {
     public static String threeCrypScreenFile = "simulatorThreeLayout.fxml";
     public static String fourCrypScreenID = "ControllerFour.java";
     public static String fourCrypScreenFile = "simulatorFourLayout.fxml";
+    public static String keyExchangeScreenID = "ControllerKeyExchange.java";
+    public static String keyExchangeScreenFile = "simulatorKeyExchange.fxml";
+
     ScreenController screenController;
     Scene scene;
     Group root;
@@ -36,7 +39,9 @@ public class Main extends Application {
         //loads the different screens to the screenController
         screenController.loadScreen(Main.mainScreenID, Main.mainScreenFile);
         screenController.loadScreen(Main.threeCrypScreenID, Main.threeCrypScreenFile);
+        screenController.loadScreen(Main.keyExchangeScreenID, Main.keyExchangeScreenFile);
         screenController.loadScreen(Main.fourCrypScreenID,Main.fourCrypScreenFile);
+
 
         //sets initial screen
         screenController.setScreen(mainScreenID);

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="684.0" prefWidth="944.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="simulator.ControllerKeyExchange">
+   <bottom>
+      <BorderPane prefHeight="69.0" prefWidth="944.0" BorderPane.alignment="CENTER">
+         <center>
+            <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <items>
+                  <Button fx:id="backSimulatorBtn" alignment="CENTER" cancelButton="true" contentDisplay="CENTER" mnemonicParsing="false" onAction="#kESimBack" text="Back" />
+                  <Button fx:id="pauseSimulatorBtn" mnemonicParsing="false" onAction="#kESimPause" text="Pause" />
+                  <Button fx:id="playSimulatorBtn" mnemonicParsing="false" onAction="#kESimPlay" text="Play">
+                     <opaqueInsets>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </opaqueInsets>
+                  </Button>
+               </items>
+            </ToolBar>
+         </center>
+      </BorderPane>
+   </bottom>
+   <center>
+      <StackPane fx:id="stackPane" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="BOTTOM_CENTER">
+         <children>
+            <ImageView fx:id="snakeImgViw" fitHeight="250.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="BOTTOM_RIGHT">
+               <image>
+                  <Image url="@../resources/snake.png" />
+               </image>
+               <StackPane.margin>
+                  <Insets bottom="30.0" left="10.0" right="40.0" top="10.0" />
+               </StackPane.margin>
+            </ImageView>
+            <ImageView fx:id="elephantImgViw" fitHeight="250.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="BOTTOM_LEFT">
+               <image>
+                  <Image url="@../resources/elephant.png" />
+               </image>
+               <StackPane.margin>
+                  <Insets bottom="30.0" left="40.0" right="10.0" top="10.0" />
+               </StackPane.margin>
+            </ImageView>
+            <TextArea fx:id="textArea" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="200.0" prefWidth="400.0" editable="false" StackPane.alignment="CENTER">
+               <StackPane.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="50.0" />
+               </StackPane.margin>
+            </TextArea>
+            <ImageView fx:id="dogImgViw" fitHeight="225.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_CENTER">
+               <image>
+                  <Image url="@../resources/dog.jpg" />
+               </image>
+               <StackPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="20.0" />
+               </StackPane.margin>
+            </ImageView>
+            <TextArea fx:id="elephantTextArea" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" editable="false" visible="false" StackPane.alignment="CENTER_LEFT">
+               <StackPane.margin>
+                  <Insets bottom="50.0" left="30.0" />
+               </StackPane.margin>
+            </TextArea>
+            <TextArea fx:id="snakeTextArea" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" editable="false" visible="false" StackPane.alignment="CENTER_RIGHT">
+               <StackPane.margin>
+                  <Insets bottom="50.0" right="30.0" />
+               </StackPane.margin>
+            </TextArea>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+      </StackPane>
+   </center>
+</BorderPane>

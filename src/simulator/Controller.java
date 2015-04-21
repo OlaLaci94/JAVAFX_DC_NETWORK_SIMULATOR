@@ -2,20 +2,13 @@ package simulator;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.Slider;
-
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 
 /**
@@ -28,6 +21,7 @@ public class Controller implements ControlTemp, Initializable
     int number;
     String payer;
     ControllerThree controllerThree;
+//    ControllerKeyExchange controllerKeyExchange;
 
     @FXML
     private Button okMainBtn;
@@ -98,6 +92,13 @@ public class Controller implements ControlTemp, Initializable
         switch (number)
         {
             case 3:
+
+
+//                controller.loadScreen(Main.keyExchangeScreenID, Main.keyExchangeScreenFile);
+//                Thread keyExchangeThrd = new Thread(controller.controllerKeyExchange);
+//                keyExchangeThrd.start();
+//                controller.setScreen(Main.keyExchangeScreenFile);
+                System.out.println("after controller.setScreen");
                 controller.loadScreen(Main.threeCrypScreenID, Main.threeCrypScreenFile);
                 Thread controlThreeThrd = new Thread(controller.controllerThree);
                 controlThreeThrd.start();
@@ -110,6 +111,7 @@ public class Controller implements ControlTemp, Initializable
                 controller.setScreen(Main.fourCrypScreenID);
                 break;
             case 5:
+                controller.setScreen(Main.keyExchangeScreenID);
                 break;
             case 6:
                break;

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
@@ -45,7 +43,7 @@
             </ImageView>
             <ImageView fx:id="snakeSpeechBubbleDifferent" fitHeight="128.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true" visible="false" StackPane.alignment="BOTTOM_RIGHT">
                <image>
-                  <Image url="@../resources/speechBubbleRIghtDifferent.png" />
+                  <Image url="@../resources/speechBubbleRIghtDifferent.gif" />
                </image>
                <StackPane.margin>
                   <Insets bottom="150.0" right="160.0" />
@@ -53,7 +51,7 @@
             </ImageView>
             <ImageView fx:id="elephantSpeechBubble" fitHeight="140.0" fitWidth="151.0" pickOnBounds="true" preserveRatio="true" visible="false" StackPane.alignment="TOP_CENTER">
                <image>
-                  <Image url="@../resources/speechBubbleRIghtDifferent.png" />
+                  <Image url="@../resources/speechBubbleRIghtDifferent.gif" />
                </image>
                <StackPane.margin>
                   <Insets right="400.0" top="30.0" />
@@ -61,7 +59,7 @@
             </ImageView>
             <ImageView fx:id="dogSpeechBubble" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" visible="false" StackPane.alignment="CENTER_LEFT">
                <image>
-                  <Image url="@../resources/speechBubbleLeftSame.png" />
+                  <Image url="@../resources/speechBubbleLeftSame.gif" />
                </image>
                <StackPane.margin>
                   <Insets left="150.0" top="50.0" />
@@ -70,7 +68,7 @@
             <TextArea fx:id="simThreeTextArea" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="400.0" wrapText="true" StackPane.alignment="CENTER" />
             <ImageView fx:id="snakeSpeechBubbleSame" fitHeight="128.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true" visible="false" StackPane.alignment="BOTTOM_RIGHT">
                <image>
-                  <Image url="@../resources/speechBubbleRIghtSame.png" />
+                  <Image url="@../resources/speechBubbleRIghtSame.gif" />
                </image>
                <StackPane.margin>
                   <Insets bottom="150.0" right="160.0" />

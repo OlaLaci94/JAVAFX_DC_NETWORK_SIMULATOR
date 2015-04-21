@@ -1,0 +1,97 @@
+package simulator;
+
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.StackPane;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+/**
+ * Created by Ola Laci on 21/04/2015.
+ */
+public class ControllerKeyExchange implements ControlTemp, Initializable, Runnable
+{
+
+    ScreenController controller;
+    DiffieHelmanKeyExchange dhKeyExchange;
+
+    @FXML
+    private Button backSimulatorBtn;
+    @FXML
+    private Button  pauseSimulatorBtn;
+    @FXML
+    private Button playSimulatorBtn;
+    @FXML
+    private StackPane stackPane;
+    @FXML
+    private ImageView snakeImgViw;
+    @FXML
+    private ImageView elephantImgViw;
+    @FXML
+    private TextArea textArea;
+    @FXML
+    private ImageView dogImgViw;
+    @FXML
+    private TextArea elephantTextArea;
+    @FXML
+    private TextArea snakeTextArea;
+
+
+
+
+    public void initialize(URL fxmlFileLocation, ResourceBundle resources)
+    {
+        // initialize your logic here: all @FXML variables will have been injected
+
+        assert backSimulatorBtn != null : "fx:id=\"backSimulatorBtn\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
+        assert pauseSimulatorBtn != null : "fx:id=\"pauseSimulatorBtn\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
+        assert playSimulatorBtn != null : "fx:id=\"playSimulatorBtn\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
+        assert stackPane != null : "fx:id=\"stackPane\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
+        assert snakeImgViw != null : "fx:id=\"snakeImgViw\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
+        assert elephantImgViw != null : "fx:id=\"elephantImgViw\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
+        assert textArea != null : "fx:id=\"textArea\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
+        assert dogImgViw != null : "fx:id=\"dogImgViw\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
+        assert elephantTextArea != null : "fx:id=\"elephantTextArea\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
+        assert snakeTextArea != null : "fx:id=\"snakeTextArea\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
+
+
+    }
+
+    public void run(){
+
+        dhKeyExchange = new DiffieHelmanKeyExchange(backSimulatorBtn,  pauseSimulatorBtn,  playSimulatorBtn,  stackPane,
+                 snakeImgViw,  elephantImgViw,  dogImgViw,  textArea, elephantTextArea,  snakeTextArea);
+
+        playSimulatorBtn.setDisable(true);
+
+    }
+
+    public void kESimBack()
+    {
+        controller.setScreen(Main.mainScreenID);
+    }
+
+    public void kESimPause(){
+
+    }
+
+    public void kESimPlay(){
+
+
+    }
+
+
+    /**
+     *  Implementation of ControlTemp interface
+     * @param screensController
+     */
+    public void setControlParent(ScreenController screensController)
+    {
+        controller = screensController;
+
+    }
+}
