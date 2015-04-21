@@ -1,5 +1,7 @@
 package simulator;
 
+import javafx.animation.Animation;
+import javafx.animation.Transition;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -46,7 +48,6 @@ public class ControllerKeyExchange implements ControlTemp, Initializable, Runnab
     public void initialize(URL fxmlFileLocation, ResourceBundle resources)
     {
         // initialize your logic here: all @FXML variables will have been injected
-
         assert backSimulatorBtn != null : "fx:id=\"backSimulatorBtn\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
         assert pauseSimulatorBtn != null : "fx:id=\"pauseSimulatorBtn\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
         assert playSimulatorBtn != null : "fx:id=\"playSimulatorBtn\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
@@ -72,17 +73,43 @@ public class ControllerKeyExchange implements ControlTemp, Initializable, Runnab
 
     public void kESimBack()
     {
+        for(int i = 0; i<dhKeyExchange.tranArrList.size(); i++){
+
+            Transition transition = dhKeyExchange.tranArrList.get(i);
+            transition.stop();
+        }
+        dhKeyExchange.tranArrList.clear();
         controller.setScreen(Main.mainScreenID);
     }
 
     public void kESimPause(){
+        for(Transition tran: dhKeyExchange.tranArrList){
 
+            if( tran.getStatus().equals(Animation.Status.RUNNING)){
+                tran.pause();
+            }
+            else{
+                System.out.println(tran.toString()+ "not");
+            }
+        }
+
+        playSimulatorBtn.setDisable(false);
     }
 
     public void kESimPlay(){
+        for(Transition tran: dhKeyExchange.tranArrList){
 
+            if( tran.getStatus().equals(Animation.Status.PAUSED)){
+                tran.play();
+            }
+            else{
+                System.out.println(tran.toString()+ "not");
+            }
+        }
+        playSimulatorBtn.setDisable(true);
 
     }
+
 
 
     /**

@@ -19,8 +19,7 @@ public class Controller implements ControlTemp, Initializable
     ScreenController controller;
     ArrayList cryptographerList;
     int number;
-    String payer;
-    ControllerThree controllerThree;
+
 //    ControllerKeyExchange controllerKeyExchange;
 
     @FXML
@@ -111,6 +110,9 @@ public class Controller implements ControlTemp, Initializable
                 controller.setScreen(Main.fourCrypScreenID);
                 break;
             case 5:
+                controller.loadScreen(Main.keyExchangeScreenID, Main.keyExchangeScreenFile);
+                Thread keyExchangeThrd = new Thread(controller.controllerKeyExchange);
+                keyExchangeThrd.start();
                 controller.setScreen(Main.keyExchangeScreenID);
                 break;
             case 6:

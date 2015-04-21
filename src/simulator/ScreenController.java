@@ -26,6 +26,7 @@ public class ScreenController extends StackPane
 {
     private HashMap<String, Node> screenMap;
     ControllerThree controllerThree;
+    ControllerKeyExchange controllerKeyExchange;
      ControlTemp myControllerTemp;
 
     /**
@@ -71,17 +72,18 @@ public class ScreenController extends StackPane
             addScreen(name, loadedScreen);
             System.out.println("loadedScreen: "+ loadedScreen);
             System.out.println("after addScreen; name: "+name);
+
             if(resource.equals(Main.threeCrypScreenFile)){
                 System.out.println("in if statemtn");
                 controllerThree = (ControllerThree) fxmlLoader.getController();
 
             }
-//            else if(resource.equals(Main.keyExchangeScreenFile)){
-//                System.out.println("in if(Main.keyExchangeScreenFile");
-//
-//                controllerKeyExchange = (ControllerKeyExchange) fxmlLoader.getController();
-//
-//            }
+            else if(resource.equals(Main.keyExchangeScreenFile)){
+                System.out.println("in if(Main.keyExchangeScreenFile");
+
+                controllerKeyExchange = (ControllerKeyExchange) fxmlLoader.getController();
+
+            }
 
             return true;
         }
