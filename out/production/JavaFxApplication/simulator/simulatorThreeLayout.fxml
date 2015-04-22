@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
@@ -65,7 +66,6 @@
                   <Insets left="150.0" top="50.0" />
                </StackPane.margin>
             </ImageView>
-            <TextArea fx:id="simThreeTextArea" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="400.0" wrapText="true" StackPane.alignment="CENTER" />
             <ImageView fx:id="snakeSpeechBubbleSame" fitHeight="128.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true" visible="false" StackPane.alignment="BOTTOM_RIGHT">
                <image>
                   <Image url="@../resources/speechBubbleRIghtSame.gif" />
@@ -74,6 +74,7 @@
                   <Insets bottom="150.0" right="160.0" />
                </StackPane.margin>
             </ImageView>
+            <TextArea fx:id="simThreeTextArea" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="400.0" wrapText="true" StackPane.alignment="CENTER" />
          </children>
       </StackPane>
    </center>

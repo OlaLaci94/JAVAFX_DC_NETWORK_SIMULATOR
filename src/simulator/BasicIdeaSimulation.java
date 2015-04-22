@@ -61,11 +61,94 @@ public class BasicIdeaSimulation extends Movement
         currentText = "Three cryptographers have dinner at their favourite restaurant. They are promptly informed that the " +
                 "bill has been paid for anonymously. The cryptographers want to know whether a fellow cryptographer paid " +
                 "or if the NSA paid. They respect each others anonymity so devise a plan that would not reveal which cryptographer paid- " +
-                "if one of the cryptographers had paid";
+                "if one of the cryptographers had paid.";
         simThreeTextArea.setText(currentText);
 
         basicThree0();
 
+
+    }
+
+
+
+
+    /**
+     * creates first section of animation
+     */
+    public void basicThree0()
+    {
+        scaleTransition(6000.0, simThreeTextArea,2.0,2.0,2,true);
+
+        scaleTransition.setOnFinished(new EventHandler<ActionEvent>()
+        {
+            @Override
+            public void handle(ActionEvent event)
+            {
+                fadeTransition(2000.0,snakeCryptographer,1.0,0.0,1,false);
+                translateTransitionX(2000.0, dogCryptographer, dogCryptographer.getX(), dogCryptographer.getX()+(simThreeStackPane.getWidth()/3)*2, 1, false);
+                translateTransitionX(2000.0, elephantCryptographer, elephantCryptographer.getX(), elephantCryptographer.getX()+100, 1, false);
+                textAreax = simThreeTextArea.getTranslateX();
+                textAreaAfterx = simThreeTextArea.getTranslateX()-(simThreeStackPane.getWidth()/3.5);
+                System.out.println("stackpane width: "+simThreeStackPane.getWidth());
+                translateTransitionX(2500.0, simThreeTextArea, simThreeTextArea.getTranslateX(), textAreaAfterx, 1, false);
+
+                tranArrList.get(tranArrList.size()-1).setOnFinished(new EventHandler<ActionEvent>()
+                {
+                    @Override
+                    public void handle(ActionEvent event)
+                    {
+
+                        coinImgViw.setVisible(true);
+                        rotateTransition(1000.0, elephantCryptographer, 1, 0.0, 180.0,1, false);
+                        simThreeTextArea.setText("Their protocol consists of three coin flips- one for each cryptographer. The dog goes first. Notice that the snake " +
+                                "cannot see the coin flip. ");
+                        scaleTransition(1500.0, simThreeTextArea, 1.5,1.5,2,true);
+
+                         rotateTransition(500.0, coinImgViw, 0,0.0, 720.0, 5, false);
+                        translateTransitionY(2500.0, coinImgViw, coinImgViw.getY(), coinImgViw.getY() - simThreeStackPane.getHeight()/3*2, 1, true);
+
+                        tranArrList.get(tranArrList.size()-1).setOnFinished(new EventHandler<ActionEvent>() {
+                            @Override
+                            public void handle(ActionEvent event) {
+                                rotateTransition(500.0, coinImgViw, 0, 0.0, 720.0, 5, false);
+                                translateTransitionY(2500.0, coinImgViw, coinImgViw.getY()-simThreeStackPane.getHeight()/3*2, coinImgViw.getY(), 1, true);
+
+                                tranArrList.get(tranArrList.size()-1).setOnFinished(new EventHandler<ActionEvent>() {
+                                    @Override
+                                    public void handle(ActionEvent event) {
+
+                                        simThreeTextArea.setText("The coin lands on heads and both cryptographers see that. However the snake has no way of seeing it- " +
+                                                "only the elephant and dog can.");
+                                        scaleTransition(2000.0, simThreeTextArea, 1.5,1.5,2, true);
+                                        tranArrList.get(tranArrList.size()-1).setOnFinished(new EventHandler<ActionEvent>() {
+                                            @Override
+                                            public void handle(ActionEvent event) {
+
+                                                coinImgViw.setVisible(false);
+                                                translateTransitionX(2000.0, dogCryptographer, dogCryptographer.getX()+(simThreeStackPane.getWidth()/3)*2, dogCryptographer.getX(), 1, false);
+                                                translateTransitionX(2000.0, elephantCryptographer, elephantCryptographer.getX()+100, elephantCryptographer.getX(), 1, false);
+                                                translateTransitionX(2000.0, simThreeTextArea, textAreaAfterx, textAreax, 1, false);
+                                                fadeTransition(2000.0,snakeCryptographer,0.0,1.0,1,false);
+
+                                                tranArrList.get(tranArrList.size()-1).setOnFinished(new EventHandler<ActionEvent>() {
+                                                    @Override
+                                                    public void handle(ActionEvent event)
+                                                    {
+                                                        basicThree1();
+
+                                                    }
+                                                });
+                                            }
+                                        });
+                                    }
+                                });
+
+                            }
+                        });
+                    }
+                });
+            }
+        });
 
     }
 
@@ -75,52 +158,55 @@ public class BasicIdeaSimulation extends Movement
     public void basicThree1()
     {
 
-        simThreeTextArea.setText("Now the elephant flips her coin- which only the elephant and the snake can see");
-        scaleTransition(4000.0, simThreeTextArea, 2.0, 2.0, 2, true);
-        scaleTransition.setOnFinished(new EventHandler<ActionEvent>() {
+        simThreeTextArea.setText("Now the elephant flips her coin- which only the elephant and the snake can see.");
+        scaleTransition(2000.0, simThreeTextArea, 1.25, 1.25, 2, true);
+
+        tranArrList.get(tranArrList.size()-1).setOnFinished(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
 
-                fadeTransition(2000.0,dogCryptographer,1.0,0.0,1,false);
-                translateTransitionX(2000.0, snakeCryptographer, snakeCryptographer.getX(), snakeCryptographer.getX()-(simThreeStackPane.getWidth()/5)*4, 1, false);
-//                translateTransitionX(2000.0, elephantCryptographer, elephantCryptographer.getX(), elephantCryptographer.getX()-100, 1, false);
-                textAreax = simThreeTextArea.getTranslateX();
-                textAreaAfterx = simThreeTextArea.getTranslateX()+350;
-                translateTransitionX(500.0, coinImgViw, coinImgViw.getX(), coinImgViw.getX()-(simThreeStackPane.getWidth()/15)*8,1, false);
-                rotateTransition(1000.0, snakeCryptographer, 1, 0.0, 180.0, 1, false);
+                fadeTransition(2000.0, dogCryptographer, 1.0, 0.0, 1, false);
 
-                translateTransitionX(2000.0, simThreeTextArea, simThreeTextArea.getTranslateX(),textAreaAfterx , 1, false);
+                translateTransitionX(2000.0, snakeCryptographer, snakeCryptographer.getX(), snakeCryptographer.getX() - (simThreeStackPane.getWidth() / 5) * 4, 1, false);
+                translateTransitionX(2000.0, elephantCryptographer, elephantCryptographer.getX(), elephantCryptographer.getX()-100, 1, false);
+                textAreax = simThreeTextArea.getTranslateX();
+                textAreaAfterx = simThreeTextArea.getTranslateX() + simThreeTextArea.getWidth() / 2;
+                translateTransitionX(500.0, coinImgViw, coinImgViw.getX(), coinImgViw.getX() - (simThreeStackPane.getWidth() / 15) * 9, 1, false);
+
+                translateTransitionX(2000.0, simThreeTextArea, simThreeTextArea.getTranslateX(), textAreaAfterx, 1, false);
 //                rotateTransition(1000.0, elephantCryptographer, 1, 0.0, 180.0, 1, false);
-                tranArrList.get(tranArrList.size()-1).setOnFinished(new EventHandler<ActionEvent>() {
+                tranArrList.get(tranArrList.size() - 1).setOnFinished(new EventHandler<ActionEvent>() {
                     @Override
                     public void handle(ActionEvent event) {
-                         coinImgViw.setVisible(true);
+                        coinImgViw.setVisible(true);
 //                        scaleTransition(2000.0, simThreeTextArea,1.0,1.5,2,true);
 
-                        simThreeTextArea.setText("The coin lands on heads and both cryptographers see that. However the snake has no way of seeing it");
+//                        rotateTransition(1000.0, elephantCryptographer, 1, 0.0, 180.0, 1, false);
+                        rotateTransition(1000.0, snakeCryptographer, 1, 0.0, 180.0, 1, false);
 
+                        rotateTransition(500.0, coinImgViw, 0, 0.0, 720.0, 5, false);
+                        System.out.println("stackpane height: " + simThreeStackPane.getHeight());
+                        translateTransitionY(2500.0, coinImgViw, coinImgViw.getY(), coinImgViw.getY() - (simThreeStackPane.getHeight() / 7) * 5, 1, true);
 
-                        rotateTransition(500.0, coinImgViw, 0,0.0, 720.0, 4, false);
-                        translateTransitionY(2000.0, coinImgViw, coinImgViw.getY(), coinImgViw.getY() - 500, 1, true);
-
-                        tranArrList.get(tranArrList.size()-1).setOnFinished(new EventHandler<ActionEvent>() {
+                        tranArrList.get(tranArrList.size() - 1).setOnFinished(new EventHandler<ActionEvent>() {
                             @Override
                             public void handle(ActionEvent event) {
-                                rotateTransition(500.0, coinImgViw, 0, 0.0, 720.0, 4, false);
-                                translateTransitionY(1500.0, coinImgViw, coinImgViw.getY() - 500, coinImgViw.getY(), 1, true);
+                                rotateTransition(500.0, coinImgViw, 0, 0.0, 720.0, 5, false);
+                                translateTransitionY(2500.0, coinImgViw, coinImgViw.getY() - (simThreeStackPane.getHeight() / 7) * 5, coinImgViw.getY(), 1, true);
 
                                 tranArrList.get(tranArrList.size() - 1).setOnFinished(new EventHandler<ActionEvent>() {
                                     @Override
                                     public void handle(ActionEvent event) {
+                                        simThreeTextArea.setText("The coin lands on heads and both the elephant and the snake cryptographers see that. However the snake has no way of seeing it.");
+                                        scaleTransition(2000.0, simThreeTextArea, 1.5, 1.5, 2, true);
 
-                                        sleeping(1000.0);
                                         coinImgViw.setVisible(false);
-                                        translateTransitionX(2000.0, snakeCryptographer, dogCryptographer.getX()-(simThreeStackPane.getWidth()/5)*4, dogCryptographer.getX(), 1, false);
-                                        translateTransitionX(2000.0, elephantCryptographer, elephantCryptographer.getX()-100, elephantCryptographer.getX(), 1, false);
+                                        translateTransitionX(2000.0, snakeCryptographer, dogCryptographer.getX() - (simThreeStackPane.getWidth() / 5) * 4, dogCryptographer.getX(), 1, false);
+                                        translateTransitionX(2000.0, elephantCryptographer, elephantCryptographer.getX() - 100, elephantCryptographer.getX(), 1, false);
                                         translateTransitionX(2000.0, simThreeTextArea, textAreaAfterx, textAreax, 1, false);
-                                        fadeTransition(2000.0,dogCryptographer,0.0,1.0,1,false);
+                                        fadeTransition(2000.0, dogCryptographer, 0.0, 1.0, 1, false);
 
-                                        tranArrList.get(tranArrList.size()-1).setOnFinished(new EventHandler<ActionEvent>() {
+                                        tranArrList.get(tranArrList.size() - 1).setOnFinished(new EventHandler<ActionEvent>() {
                                             @Override
                                             public void handle(ActionEvent event) {
                                                 basicThree2();
@@ -136,70 +222,14 @@ public class BasicIdeaSimulation extends Movement
         });
     }
 
-
-    /**
-     * creates fourth section of animation
-     */
-    public void basicThree3(){
-
-        simThreeTextArea.setText("If the NSA has paid, the three cryptographers are all honest and say whether the two coin flips they " +
-                "have witnessed were the same or different. The cryptographers will all be aware that the NSA paid because their is an even number" +
-                "of cryptographers which are stating different ");
-        scaleTransition(8000.0, simThreeTextArea, 2.5, 2.5, 2, true);
-        tranArrList.get(tranArrList.size()-1).setOnFinished(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-
-                elephantSpeechBubble.setVisible(true);
-                dogSpeechBubble.setVisible(true);
-                snakeSpeechBubbleDifferent.setVisible(true);
-                sleeping(1000.0);
-
-                fadeTransition(1000.0, elephantCryptographer, 1.0,0.5,1,true);
-                fadeTransition(1000.0, dogCryptographer, 1.0,0.5,1,true);
-                fadeTransition(1000.0, snakeCryptographer, 1.0,0.5,1,true);
-                fadeTransition(1000.0, elephantCryptographer, 0.5,1.0,1,true);
-                fadeTransition(1000.0, dogCryptographer, 0.5,1.0,1,true);
-                fadeTransition(1000.0, snakeCryptographer, 0.5,1.0,1,true);
-                tranArrList.get(tranArrList.size()-1).setOnFinished(new EventHandler<ActionEvent>() {
-                    @Override
-                    public void handle(ActionEvent event) {
-                        simThreeTextArea.setText("However if a cryptographer paid, that cryptographer will say the opposite to the truth. This will create " +
-                                "a situtaion where there is an odd number of cryptographers saying different- so all cryptographers know that a cryptographer paid, " +
-                                "however do not know which cryptographer paid");
-                        scaleTransition(8000.0, simThreeTextArea, 2.5, 2.5, 2, true);
-                        sleeping(2000.0);
-                        snakeSpeechBubbleDifferent.setVisible(false);
-                        snakeSpeechBubbleSame.setVisible(true);
-
-                        rotateTransition(2000.0, snakeCryptographer,2, 0.0, 360.0, 1, true);
-                        tranArrList.get(tranArrList.size()-1).setOnFinished(new EventHandler<ActionEvent>() {
-                            @Override
-                            public void handle(ActionEvent event) {
-
-                                simThreeTextArea.setText("As you can see here, the snake paid. However there is no way the other two cryptographers can" +
-                                        "ever know that it was the snake. This is the principle that DC- nets are based on");
-                                scaleTransition(8000.0, simThreeTextArea, 2.5, 2.5, 2, true);
-                                sleeping(1000.0);
-                            }
-                        });
-
-                    }
-                });
-            }
-        });
-
-    }
-
     /**
      * creates third section of animation
      */
     public void basicThree2() {
 
-        simThreeTextArea.setText("Now the snake flips her coin- which only the snake and the dog can see");
-        scaleTransition(4000.0, simThreeTextArea, 2.0, 2.0, 2, true);
+        simThreeTextArea.setText("Now the snake flips her coin- which only the snake and the dog can see.");
+        scaleTransition(2000.0, simThreeTextArea, 1.5, 1.5, 2, true);
 
-// scaleTransition(4000.0, simThreeTextArea, 2.0, 2.0, 2, true);
         scaleTransition.setOnFinished(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -216,19 +246,24 @@ public class BasicIdeaSimulation extends Movement
 
                 tranArrList.get(tranArrList.size() - 1).setOnFinished(new EventHandler<ActionEvent>() {
                     @Override
-                    public void handle(ActionEvent event) {
+                    public void handle(ActionEvent event)
+                    {
                         coinImgViw.setVisible(true);
-// scaleTransition(2000.0, simThreeTextArea,1.0,1.5,2,true);
 
-                        simThreeTextArea.setText("The coin lands on heads and both cryptographers see that. However the snake has no way of seeing it");
-                        rotateTransition(500.0, coinImgViw, 0, 0.0, 720.0, 4, false);
-                        translateTransitionY(2000.0, coinImgViw, coinImgViw.getY(), coinImgViw.getY() - 500, 1, true);
+                        simThreeTextArea.setText("The coin lands on heads and both cryptographers see that. However the elephant has no way of seeing it");
+                        scaleTransition(1000.0, simThreeTextArea, 1.5, 1.5, 2, true);
+                        tranArrList.get(tranArrList.size()-1).setOnFinished(new EventHandler<ActionEvent>() {
+                            @Override
+                            public void handle(ActionEvent event) {
+
+                        rotateTransition(500.0, coinImgViw, 0, 0.0, 720.0, 5, false);
+                        translateTransitionY(2500.0, coinImgViw, coinImgViw.getY(), coinImgViw.getY() - 500, 1, true);
 
                         tranArrList.get(tranArrList.size() - 1).setOnFinished(new EventHandler<ActionEvent>() {
                             @Override
                             public void handle(ActionEvent event) {
-                                rotateTransition(500.0, coinImgViw, 0, 0.0, 720.0, 4, false);
-                                translateTransitionY(1500.0, coinImgViw, coinImgViw.getY() - 500, coinImgViw.getY(), 1, true);
+                                rotateTransition(500.0, coinImgViw, 0, 0.0, 720.0, 5, false);
+                                translateTransitionY(2500.0, coinImgViw, coinImgViw.getY() - 500, coinImgViw.getY(), 1, true);
 
                                 tranArrList.get(tranArrList.size() - 1).setOnFinished(new EventHandler<ActionEvent>() {
                                     @Override
@@ -255,6 +290,8 @@ public class BasicIdeaSimulation extends Movement
 
                             }
                         });
+                            }
+                        });
                     }
                 });
 
@@ -265,60 +302,64 @@ public class BasicIdeaSimulation extends Movement
     }
 
     /**
-     * creates first section of animation
+     * creates fourth section of animation
      */
-    public void basicThree0()
-    {
-        scaleTransition(6000.0, simThreeTextArea,2.0,2.0,2,true);
+    public void basicThree3(){
 
-        scaleTransition.setOnFinished(new EventHandler<ActionEvent>()
-        {
+        simThreeTextArea.setText("If the NSA has paid, the three cryptographers are all honest and say whether the two coin flips they " +
+                "have witnessed were the same or different. The cryptographers will all be aware that the NSA paid because their is an even number" +
+                "of cryptographers which are stating different. ");
+        scaleTransition(7000.0, simThreeTextArea, 2.5, 2.5, 2, true);
+        tranArrList.get(tranArrList.size()-1).setOnFinished(new EventHandler<ActionEvent>() {
             @Override
-            public void handle(ActionEvent event)
-            {
-                fadeTransition(2000.0,snakeCryptographer,1.0,0.0,1,false);
-                translateTransitionX(2000.0, dogCryptographer, dogCryptographer.getX(), dogCryptographer.getX()+900, 1, false);
-                translateTransitionX(2000.0, elephantCryptographer, elephantCryptographer.getX(), elephantCryptographer.getX()+100, 1, false);
-                textAreax = simThreeTextArea.getTranslateX();
-                textAreaAfterx = simThreeTextArea.getTranslateX()-350;
-                translateTransitionX(2000.0, simThreeTextArea, simThreeTextArea.getTranslateX(),textAreaAfterx , 1, false);
+            public void handle(ActionEvent event) {
 
-                tranArrList.get(2).setOnFinished(new EventHandler<ActionEvent>()
-                {
+                elephantSpeechBubble.setVisible(true);
+                dogSpeechBubble.setVisible(true);
+                snakeSpeechBubbleDifferent.setVisible(true);
+                sleeping(1000.0);
+
+                scaleTransition(1500.0, elephantCryptographer, 1.25,1.25,2,true);
+                scaleTransition(1500.0, dogCryptographer, 1.25,1.25,2,true);
+                scaleTransition(1500.0, snakeCryptographer, 1.25,1.25,2,true);
+
+                tranArrList.get(tranArrList.size()-1).setOnFinished(new EventHandler<ActionEvent>() {
                     @Override
-                    public void handle(ActionEvent event)
-                    {
+                    public void handle(ActionEvent event) {
+                        simThreeTextArea.setText("However if a cryptographer paid, that cryptographer will say the opposite to the truth. This will create " +
+                                "a situation where there is an odd number of cryptographers saying different- so all cryptographers know that a cryptographer paid, " +
+                                "however do not know which cryptographer paid.");
+                        scaleTransition(5000.0, simThreeTextArea, 2.5, 2.5, 2, true);
+//                        sleeping(2000.0);
+                        snakeSpeechBubbleDifferent.setVisible(false);
+                        snakeSpeechBubbleSame.setVisible(true);
 
-                        coinImgViw.setVisible(true);
-                        simThreeTextArea.setText("The coin lands on heads and both cryptographers see that. However the snake has no way of seeing it");
-
-                        rotateTransition(1000.0, elephantCryptographer, 1, 0.0, 180.0, 1, false);
-                        rotateTransition(500.0, coinImgViw, 0,0.0, 720.0, 4, false);
-                        translateTransitionY(2000.0, coinImgViw, coinImgViw.getY(), coinImgViw.getY() - 500, 1, true);
-                        tranArrList.get(tranArrList.size()-1).setOnFinished(new EventHandler<ActionEvent>() {
+                        rotateTransition(2000.0, snakeCryptographer,1, 0.0, 360.0, 1, true);
+                        tranArrList.get(tranArrList.size()-2).setOnFinished(new EventHandler<ActionEvent>() {
                             @Override
                             public void handle(ActionEvent event) {
-                                rotateTransition(500.0, coinImgViw, 0, 0.0, 720.0, 4, false);
-                                translateTransitionY(1500.0, coinImgViw, coinImgViw.getY()-500, coinImgViw.getY(), 1, true);
 
-                                tranArrList.get(9).setOnFinished(new EventHandler<ActionEvent>() {
+                                simThreeTextArea.setText("As you can see here, the snake paid. However there is no way the other two cryptographers can" +
+                                        " ever know that it was the snake. This is the principle that DC- nets are based on.");
+                                scaleTransition(7000.0, simThreeTextArea, 2.5, 2.5, 2, true);
+
+                                tranArrList.get(tranArrList.size()-1).setOnFinished(new EventHandler<ActionEvent>() {
                                     @Override
                                     public void handle(ActionEvent event) {
-
-                                        sleeping(1000.0);
-
-                                        coinImgViw.setVisible(false);
-                                        translateTransitionX(2000.0, dogCryptographer, dogCryptographer.getX()+900, dogCryptographer.getX(), 1, false);
-                                        translateTransitionX(2000.0, elephantCryptographer, elephantCryptographer.getX()+100, elephantCryptographer.getX(), 1, false);
-                                        translateTransitionX(2000.0, simThreeTextArea, textAreaAfterx, textAreax, 1, false);
-                                        fadeTransition(2000.0,snakeCryptographer,0.0,1.0,1,false);
+                                        simThreeTextArea.setText("But how is this performed on a computer? Well the coin toss illustrates key generation. " +
+                                                "The shared witnessing of the coin toss illustrates key exchange. ");
+                                        scaleTransition(8000.0, simThreeTextArea, 2.75,2.75,2, true);
 
                                         tranArrList.get(tranArrList.size()-1).setOnFinished(new EventHandler<ActionEvent>() {
                                             @Override
-                                            public void handle(ActionEvent event)
-                                            {
-                                                basicThree1();
+                                            public void handle(ActionEvent event) {
 
+                                                simThreeTextArea.setText("If same is assigned a value of 0, and different is assigned a value of 1; and after the broadcast of the values, each" +
+                                                        " cryptographer computes the XOR of the three values- we can see that when the NSA paid we are left with a value of 0 - as there will be" +
+                                                        "two instances of different- so they will inevitably cancel each other out. However, when a cryptographer pays, we are left with a value " +
+                                                        "of 1 - the message");
+
+                                                scaleTransition(8000.0, simThreeTextArea, 2.75,2.75,2, true);
                                             }
                                         });
                                     }
@@ -328,11 +369,8 @@ public class BasicIdeaSimulation extends Movement
 
                     }
                 });
-
             }
         });
-
-
 
     }
 

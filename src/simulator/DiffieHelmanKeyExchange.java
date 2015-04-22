@@ -105,10 +105,18 @@ public class DiffieHelmanKeyExchange extends Movement{
                                                                 tranArrList.get(tranArrList.size()-1).setOnFinished(new EventHandler<ActionEvent>() {
                                                                     @Override
                                                                     public void handle(ActionEvent event) {
-                                                                        
-                                                                       textArea.setText("This protocol allows the elephant and snake to share the key over an insecure channel " +
-                                                                               "while knowing that the dog- and anyone else cannot feasibly compute their shared key.");
+
+                                                                       textArea.setText("This protocol allows the elephant and snake to generate and share the key over an insecure channel " +
+                                                                               "while knowing that the dog- and anyone else - cannot feasibly compute their shared key. This is the most " +
+                                                                               "desirable form of key exchange that will be assumed throughout these illustrations. However, there are obviously" +
+                                                                               "other key generation and exchange protocols. ");
                                                                         scaleTransition(2500.0, textArea, 2.0,2.0,1, true);
+                                                                        tranArrList.get(tranArrList.size()-1).setOnFinished(new EventHandler<ActionEvent>() {
+                                                                            @Override
+                                                                            public void handle(ActionEvent event) {
+
+                                                                            }
+                                                                        });
                                                                     }
                                                                 });
 

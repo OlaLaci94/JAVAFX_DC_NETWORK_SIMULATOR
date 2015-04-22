@@ -16,7 +16,7 @@ import java.util.ResourceBundle;
  */
 public class Controller implements ControlTemp, Initializable
 {
-    ScreenController controller;
+    ScreenController screenController;
     ArrayList cryptographerList;
     int number;
 
@@ -39,7 +39,7 @@ public class Controller implements ControlTemp, Initializable
      */
     public void setControlParent(ScreenController screensController)
     {
-        this.controller = screensController;
+        this.screenController = screensController;
 
     }
 
@@ -98,22 +98,22 @@ public class Controller implements ControlTemp, Initializable
 //                keyExchangeThrd.start();
 //                controller.setScreen(Main.keyExchangeScreenFile);
                 System.out.println("after controller.setScreen");
-                controller.loadScreen(Main.threeCrypScreenID, Main.threeCrypScreenFile);
-                Thread controlThreeThrd = new Thread(controller.controllerThree);
+                screenController.loadScreen(Main.threeCrypScreenID, Main.threeCrypScreenFile);
+                Thread controlThreeThrd = new Thread(screenController.controllerThree);
                 controlThreeThrd.start();
-                controller.setScreen(Main.threeCrypScreenID);
+                screenController.setScreen(Main.threeCrypScreenID);
 
 
 
                 break;
             case 4:
-                controller.setScreen(Main.fourCrypScreenID);
+                screenController.setScreen(Main.fourCrypScreenID);
                 break;
             case 5:
-                controller.loadScreen(Main.keyExchangeScreenID, Main.keyExchangeScreenFile);
-                Thread keyExchangeThrd = new Thread(controller.controllerKeyExchange);
+                screenController.loadScreen(Main.keyExchangeScreenID, Main.keyExchangeScreenFile);
+                Thread keyExchangeThrd = new Thread(screenController.controllerKeyExchange);
                 keyExchangeThrd.start();
-                controller.setScreen(Main.keyExchangeScreenID);
+                screenController.setScreen(Main.keyExchangeScreenID);
                 break;
             case 6:
                break;

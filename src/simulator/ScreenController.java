@@ -46,8 +46,6 @@ public class ScreenController extends StackPane
     public void addScreen(String name, Node screen)
     {
         screenMap.put(name,screen);
-        System.out.println("addScreen, name: "+ name);
-        System.out.println("addScreen, screen: "+ screen);
     }
 
 
@@ -61,26 +59,19 @@ public class ScreenController extends StackPane
     {
         try
         {
-            System.out.println("in loadScreen, name: "+name);
-            System.out.println("in loadScreen, resource: "+resource);
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(resource));
-
-                    Parent loadedScreen = (Parent) fxmlLoader.load();
-
-             myControllerTemp = ((ControlTemp) fxmlLoader.getController());
+            Parent loadedScreen = (Parent) fxmlLoader.load();
+            myControllerTemp = ((ControlTemp) fxmlLoader.getController());
             myControllerTemp.setControlParent(this);
             addScreen(name, loadedScreen);
-            System.out.println("loadedScreen: "+ loadedScreen);
-            System.out.println("after addScreen; name: "+name);
 
-            if(resource.equals(Main.threeCrypScreenFile)){
-                System.out.println("in if statemtn");
+            if(resource.equals(Main.threeCrypScreenFile))
+            {
                 controllerThree = (ControllerThree) fxmlLoader.getController();
 
             }
-            else if(resource.equals(Main.keyExchangeScreenFile)){
-                System.out.println("in if(Main.keyExchangeScreenFile");
-
+            else if(resource.equals(Main.keyExchangeScreenFile))
+            {
                 controllerKeyExchange = (ControllerKeyExchange) fxmlLoader.getController();
 
             }
@@ -100,9 +91,7 @@ public class ScreenController extends StackPane
      */
     public boolean setScreen(final String name){
 
-        System.out.println("in setScreen");
          //checks screen has been previously loaded
-        System.out.println("screenMap: "+screenMap.get(name));
         if(screenMap.get(name)!= null)
         {
             final DoubleProperty opacityProperty = opacityProperty();
@@ -146,7 +135,6 @@ public class ScreenController extends StackPane
         }
         else
         {
-            System.out.println("screen not loaded");
             return  false;
         }
 
@@ -160,7 +148,6 @@ public class ScreenController extends StackPane
     public Boolean unloadScreen(String name){
 
         if(screenMap.remove(name)==null){
-            System.out.println("screen doesn't exist");
             return  false;
         }
         else{
