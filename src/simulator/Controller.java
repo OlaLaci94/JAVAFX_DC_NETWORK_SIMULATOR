@@ -116,6 +116,10 @@ public class Controller implements ControlTemp, Initializable
                 screenController.setScreen(Main.keyExchangeScreenID);
                 break;
             case 6:
+                screenController.loadScreen(Main.manyParticipantsScreenID, Main.manyParticipantsScreenFile);
+                Thread manyParticipantsThrd = new Thread(screenController.controllerManyParticipants);
+                manyParticipantsThrd.start();
+                screenController.setScreen(Main.manyParticipantsScreenID);
                break;
             case 7:
                 break;

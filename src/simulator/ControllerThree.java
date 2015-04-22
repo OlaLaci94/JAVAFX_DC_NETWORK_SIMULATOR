@@ -18,7 +18,7 @@ public class ControllerThree implements ControlTemp, Initializable, Runnable {
 
     ScreenController controller;
     BasicIdeaSimulation basicIdeaSimulation;
-    Boolean paused = false;
+
 
     @FXML
     private Button threeSimPauseBtn;
@@ -132,7 +132,6 @@ public class ControllerThree implements ControlTemp, Initializable, Runnable {
            }
         }
 
-        paused = true;
         threeSimPlayBtn.setDisable(false);
 
     }

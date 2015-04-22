@@ -18,11 +18,12 @@ public class Main extends Application {
     public static String fourCrypScreenFile = "simulatorFourLayout.fxml";
     public static String keyExchangeScreenID = "ControllerKeyExchange.java";
     public static String keyExchangeScreenFile = "simulatorKeyExchange.fxml";
+    public static String manyParticipantsScreenID = "ControllerManyParticipants.java";
+    public static String manyParticipantsScreenFile = "simulatorManyParticipants.fxml";
 
     ScreenController screenController;
     Scene scene;
     Group root;
-    ControllerThree controllerThree;
 
 
     /**
@@ -41,6 +42,7 @@ public class Main extends Application {
         screenController.loadScreen(Main.threeCrypScreenID, Main.threeCrypScreenFile);
         screenController.loadScreen(Main.keyExchangeScreenID, Main.keyExchangeScreenFile);
         screenController.loadScreen(Main.fourCrypScreenID,Main.fourCrypScreenFile);
+        screenController.loadScreen(Main.manyParticipantsScreenID, Main.manyParticipantsScreenFile);
 
 
         //sets initial screen

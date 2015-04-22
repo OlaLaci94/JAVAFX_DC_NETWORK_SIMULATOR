@@ -18,7 +18,7 @@ import java.util.ResourceBundle;
 public class ControllerKeyExchange implements ControlTemp, Initializable, Runnable
 {
 
-    ScreenController controller;
+    ScreenController screenController;
     DiffieHelmanKeyExchange dhKeyExchange;
 
     @FXML
@@ -79,7 +79,7 @@ public class ControllerKeyExchange implements ControlTemp, Initializable, Runnab
             transition.stop();
         }
         dhKeyExchange.tranArrList.clear();
-        controller.setScreen(Main.mainScreenID);
+        screenController.setScreen(Main.mainScreenID);
     }
 
     public void kESimPause(){
@@ -118,7 +118,7 @@ public class ControllerKeyExchange implements ControlTemp, Initializable, Runnab
      */
     public void setControlParent(ScreenController screensController)
     {
-        controller = screensController;
+        screenController = screensController;
 
     }
 }

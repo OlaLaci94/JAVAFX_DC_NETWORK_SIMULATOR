@@ -328,7 +328,8 @@ public class BasicIdeaSimulation extends Movement
                     public void handle(ActionEvent event) {
                         simThreeTextArea.setText("However if a cryptographer paid, that cryptographer will say the opposite to the truth. This will create " +
                                 "a situation where there is an odd number of cryptographers saying different- so all cryptographers know that a cryptographer paid, " +
-                                "however do not know which cryptographer paid.");
+                                "however do not know which cryptographer paid. No one can determine which cryptographer paid simply because they do not know the value of " +
+                                "the other coin toss- and each scenario is equally likely.");
                         scaleTransition(5000.0, simThreeTextArea, 2.5, 2.5, 2, true);
 //                        sleeping(2000.0);
                         snakeSpeechBubbleDifferent.setVisible(false);
@@ -357,9 +358,19 @@ public class BasicIdeaSimulation extends Movement
                                                 simThreeTextArea.setText("If same is assigned a value of 0, and different is assigned a value of 1; and after the broadcast of the values, each" +
                                                         " cryptographer computes the XOR of the three values- we can see that when the NSA paid we are left with a value of 0 - as there will be" +
                                                         "two instances of different- so they will inevitably cancel each other out. However, when a cryptographer pays, we are left with a value " +
-                                                        "of 1 - the message");
+                                                        "of 1 - the message. Also, not that this protocol is non- interactive as the participants");
 
-                                                scaleTransition(8000.0, simThreeTextArea, 2.75,2.75,2, true);
+                                                scaleTransition(8000.0, simThreeTextArea, 2.75, 2.75, 2, true);
+                                                tranArrList.get(tranArrList.size()-1).setOnFinished(new EventHandler<ActionEvent>() {
+                                                    @Override
+                                                    public void handle(ActionEvent event) {
+                                                        simThreeTextArea.setText("Also, note that this protocol is non- interactive as the participants do not have any direct communication after" +
+                                                                " establishing the shared keys.");
+
+                                                        scaleTransition(8000.0, simThreeTextArea, 2.75, 2.75, 2, true);
+
+                                                    }
+                                                });
                                             }
                                         });
                                     }
