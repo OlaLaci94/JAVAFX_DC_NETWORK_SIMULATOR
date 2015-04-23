@@ -28,7 +28,11 @@ public class ScreenController extends StackPane
     ControllerThree controllerThree;
     ControllerKeyExchange controllerKeyExchange;
     ControllerManyParticipants controllerManyParticipants;
-     ControlTemp myControllerTemp;
+    ControlTemp myControllerTemp;
+    ControllerArbitraryAlphabet controllerArbitraryAlphabet;
+    ControllerArbitraryLength controllerArbitraryLength;
+    ControllerDisco controllerDisco;
+    ControllerVoting controllerVoting;
 
     /**
      *  creates ScreenController object which is of type Stackpane
@@ -80,6 +84,25 @@ public class ScreenController extends StackPane
             else if(resource.equals(Main.manyParticipantsScreenFile)){
                 controllerManyParticipants = (ControllerManyParticipants) fxmlLoader.getController();
             }
+
+            else if(resource.equals(Main.arbitraryAlphabetScreenFile)){
+
+                controllerArbitraryAlphabet = (ControllerArbitraryAlphabet) fxmlLoader.getController();
+            }
+            else if(resource.equals(Main.arbitraryLengthScreenFile)){
+
+                controllerArbitraryLength = (ControllerArbitraryLength) fxmlLoader.getController();
+            }
+
+            else if(resource.equals(Main.discoScreenFile)){
+
+                controllerDisco = (ControllerDisco) fxmlLoader.getController();
+            }
+            else if(resource.equals(Main.votingScreenFile)){
+
+                controllerVoting = (ControllerVoting) fxmlLoader.getController();
+            }
+
 
             return true;
         }

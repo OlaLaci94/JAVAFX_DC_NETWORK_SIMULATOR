@@ -92,11 +92,6 @@ public class Controller implements ControlTemp, Initializable
         {
             case 3:
 
-
-//                controller.loadScreen(Main.keyExchangeScreenID, Main.keyExchangeScreenFile);
-//                Thread keyExchangeThrd = new Thread(controller.controllerKeyExchange);
-//                keyExchangeThrd.start();
-//                controller.setScreen(Main.keyExchangeScreenFile);
                 System.out.println("after controller.setScreen");
                 screenController.loadScreen(Main.threeCrypScreenID, Main.threeCrypScreenFile);
                 Thread controlThreeThrd = new Thread(screenController.controllerThree);
@@ -107,7 +102,12 @@ public class Controller implements ControlTemp, Initializable
 
                 break;
             case 4:
-                screenController.setScreen(Main.fourCrypScreenID);
+                System.out.println("in case 4");
+                screenController.loadScreen(Main.arbitraryAlphabetScreenID, Main.arbitraryAlphabetScreenFile);
+                Thread arbitraryAlphabetThrd = new Thread(screenController.controllerArbitraryAlphabet);
+                arbitraryAlphabetThrd.start();
+                screenController.setScreen(Main.arbitraryAlphabetScreenID);
+
                 break;
             case 5:
                 screenController.loadScreen(Main.keyExchangeScreenID, Main.keyExchangeScreenFile);
@@ -122,10 +122,25 @@ public class Controller implements ControlTemp, Initializable
                 screenController.setScreen(Main.manyParticipantsScreenID);
                break;
             case 7:
+                screenController.loadScreen(Main.arbitraryLengthScreenID, Main.arbitraryLengthScreenFile);
+                Thread arbitraryLengthThrd = new Thread(screenController.controllerArbitraryLength);
+                arbitraryLengthThrd.start();
+                screenController.setScreen(Main.arbitraryLengthScreenID);
                 break;
+
             case 8:
+                screenController.loadScreen(Main.discoScreenID, Main.discoScreenFile);
+                Thread discoThrd = new Thread(screenController.controllerDisco);
+                discoThrd.start();
+                screenController.setScreen(Main.discoScreenID);
+
                 break;
             case 9:
+                screenController.loadScreen(Main.votingScreenID, Main.votingScreenFile);
+                Thread votingThrd = new Thread(screenController.controllerVoting);
+                votingThrd.start();
+                screenController.setScreen(Main.votingScreenID);
+
                 break;
             case 10:
                 break;

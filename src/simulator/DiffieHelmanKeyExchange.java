@@ -43,16 +43,12 @@ public class DiffieHelmanKeyExchange extends Movement{
         textArea.setText("DC- nets were initially created assuming a reliable broadcast network. This is however computationally unrealistic." +
                 "The keys (coin toss) must be kept secret or unconditional security cannot be maintained. So, we use a public key scheme- known " +
                 "as the Diffie-Hellman key exchange. We shall see how the elephant and snake can share a key in a secure manner even over an insecure channel.");
-
-
         part1();
-
-
     }
 
 
-    public void part1(){
-
+    public void part1()
+    {
         rotateTransition(500.0, elephantImgViw,1,0.0,180.0,1,false);
         scaleTransition(7000.0, textArea,2.0,2.0,2,true);
         tranArrList.get(tranArrList.size()-1).setOnFinished(new EventHandler<ActionEvent>() {
@@ -141,10 +137,6 @@ public class DiffieHelmanKeyExchange extends Movement{
             }
         });
 
-
-
-
     }
-
 
 }

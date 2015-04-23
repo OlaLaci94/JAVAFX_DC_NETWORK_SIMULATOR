@@ -47,8 +47,13 @@ public class ManyParticipantsAnimation extends Movement {
                                       TextArea mPTextArea, HBox elephantVector, HBox reservationVector, HBox cryptographerVector, HBox cryptographer2Vector, HBox cryptographer3Vector,
                                      VBox cryptographer4Vector,VBox cryptographer5Vector, VBox cryptographer6Vector){
 
-       this.backSimulatorBtn = backSimulatorBtn;    this.pauseSimulatorBtn = pauseSimulatorBtn;     this.playSimulatorBtn = playSimulatorBtn;       this.stackPane = stackPane;
-        this.elephantImgViw = elephantImgViw;      this.squirrelImgViw = squirrelImgViw; this.snakeImgViw = snakeImgViw;     this.dogImgViw = dogImgViw;     this.crocodileImgViw = crocodileImgViw;     this.penguinImgViw = penguinImgViw;
+       this.backSimulatorBtn = backSimulatorBtn;
+        this.pauseSimulatorBtn = pauseSimulatorBtn;
+        this.playSimulatorBtn = playSimulatorBtn;
+        this.stackPane = stackPane;
+        this.elephantImgViw = elephantImgViw;
+        this.squirrelImgViw = squirrelImgViw;
+        this.snakeImgViw = snakeImgViw;     this.dogImgViw = dogImgViw;     this.crocodileImgViw = crocodileImgViw;     this.penguinImgViw = penguinImgViw;
         this.chickenImgViw = chickenImgViw;     this.pandaImgViw = pandaImgViw;     this.elephantVector1 = elephantVector1;     this.elephantVector2 = elephantVector2;     this.elephantVector3 = elephantVector3;
         this.elephantVector4 = elephantVector4;     this.elephantVector5 = elephantVector5;     this.elephantVector6 = elephantVector6;
         this.reservationVector1 = reservationVector1;       this.reservationVector2 = reservationVector2;       this.reservationVector3 = reservationVector3;       this.reservationVector4 = reservationVector4;
@@ -262,8 +267,10 @@ public class ManyParticipantsAnimation extends Movement {
                                         });
                                     }
                                 });
+
                                     }
                                 });
+
                             }
                         });
                     }

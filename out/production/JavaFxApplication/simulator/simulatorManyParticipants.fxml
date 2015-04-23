@@ -56,7 +56,7 @@
                   <Insets bottom="50.0" left="50.0" />
                </StackPane.margin>
             </HBox>
-            <HBox fx:id="reservationVector" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="720.0" visible="false" StackPane.alignment="TOP_LEFT">
+            <HBox fx:id="reservationVector" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="720.0" visible="false" StackPane.alignment="TOP_CENTER">
                <children>
                   <TextArea fx:id="reservationVector2" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
                   <TextArea fx:id="reservationVector3" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
@@ -70,7 +70,7 @@
                   <Insets left="50.0" top="30.0" />
                </StackPane.margin>
             </HBox>
-            <HBox fx:id="cryptographerVector" layoutX="60.0" layoutY="268.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="720.0" visible="false" StackPane.alignment="TOP_RIGHT">
+            <HBox fx:id="cryptographerVector" layoutX="60.0" layoutY="268.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="136.0" prefWidth="745.0" visible="false" StackPane.alignment="TOP_RIGHT">
                <children>
                   <TextArea fx:id="cryptographerVector1" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
                   <TextArea fx:id="cryptographerVector2" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
@@ -83,7 +83,7 @@
                   <Insets right="50.0" top="80.0" />
                </StackPane.margin>
             </HBox>
-            <HBox fx:id="cryptographer2Vector" layoutX="209.0" layoutY="268.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="720.0" visible="false" StackPane.alignment="CENTER">
+            <HBox fx:id="cryptographer2Vector" layoutX="209.0" layoutY="268.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="127.0" prefWidth="769.0" visible="false" StackPane.alignment="CENTER">
                <children>
                   <TextArea fx:id="cryptographer2Vector1" prefHeight="80.0" prefWidth="75.0" wrapText="true" />
                   <TextArea fx:id="cryptographer2Vector2" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
@@ -93,7 +93,7 @@
                   <TextArea fx:id="cryptographer2Vector6" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
                  </children>
             </HBox>
-            <HBox fx:id="cryptographer3Vector" layoutX="209.0" layoutY="525.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="720.0" visible="false" StackPane.alignment="CENTER_LEFT">
+            <HBox fx:id="cryptographer3Vector" layoutX="209.0" layoutY="525.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="123.0" prefWidth="758.0" visible="false" StackPane.alignment="CENTER_LEFT">
                <children>
                   <TextArea fx:id="cryptographer3Vector1" prefHeight="80.0" prefWidth="75.0" wrapText="true" />
                   <TextArea fx:id="cryptographer3Vector2" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
@@ -106,7 +106,7 @@
                   <Insets bottom="100.0" left="50.0" />
                </StackPane.margin>
             </HBox>
-            <VBox fx:id="cryptographer4Vector" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="720.0" visible="false" StackPane.alignment="CENTER_LEFT">
+            <VBox fx:id="cryptographer4Vector" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="597.0" prefWidth="684.0" visible="false" StackPane.alignment="CENTER_LEFT">
                <children>
                   <TextArea fx:id="cryptographer4Vector1" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="75.0" prefWidth="80.0" wrapText="true" />
                   <TextArea fx:id="cryptographer4Vector2" editable="false" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
@@ -116,7 +116,7 @@
                   <TextArea fx:id="cryptographer4Vector6" editable="false" layoutX="10.0" layoutY="310.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
                    </children>
             </VBox>
-            <VBox fx:id="cryptographer5Vector" layoutX="10.0" layoutY="45.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="720.0" visible="false" StackPane.alignment="CENTER_RIGHT">
+            <VBox fx:id="cryptographer5Vector" layoutX="10.0" layoutY="45.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="532.0" prefWidth="789.0" visible="false" StackPane.alignment="CENTER_RIGHT">
                <children>
                   <TextArea fx:id="cryptographer5Vector1" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="75.0" prefWidth="80.0" wrapText="true" />
                   <TextArea fx:id="cryptographer5Vector2" editable="false" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
@@ -126,7 +126,7 @@
                   <TextArea fx:id="cryptographer5Vector6" editable="false" layoutX="10.0" layoutY="310.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
                   </children>
             </VBox>
-            <VBox fx:id="cryptographer6Vector" layoutX="854.0" layoutY="45.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="720.0" visible="false" StackPane.alignment="BOTTOM_CENTER">
+            <VBox fx:id="cryptographer6Vector" layoutX="854.0" layoutY="45.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="488.0" prefWidth="821.0" visible="false" StackPane.alignment="BOTTOM_CENTER">
                <children>
                   <TextArea fx:id="cryptographer6Vector1" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="75.0" prefWidth="80.0" wrapText="true" />
                   <TextArea fx:id="cryptographer6Vector2" editable="false" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
