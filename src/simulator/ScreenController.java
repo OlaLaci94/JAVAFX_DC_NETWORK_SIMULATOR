@@ -30,8 +30,7 @@ public class ScreenController extends StackPane
     ControllerManyParticipants controllerManyParticipants;
     ControlTemp myControllerTemp;
     ControllerArbitraryAlphabet controllerArbitraryAlphabet;
-    ControllerArbitraryLength controllerArbitraryLength;
-    ControllerDisco controllerDisco;
+     ControllerDisco controllerDisco;
     ControllerVoting controllerVoting;
 
     /**
@@ -89,10 +88,7 @@ public class ScreenController extends StackPane
 
                 controllerArbitraryAlphabet = (ControllerArbitraryAlphabet) fxmlLoader.getController();
             }
-            else if(resource.equals(Main.arbitraryLengthScreenFile)){
 
-                controllerArbitraryLength = (ControllerArbitraryLength) fxmlLoader.getController();
-            }
 
             else if(resource.equals(Main.discoScreenFile)){
 

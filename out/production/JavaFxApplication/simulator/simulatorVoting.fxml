@@ -35,23 +35,69 @@
    <center>
       <StackPane fx:id="stackPane" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fx:id="elephantImgViw" fitHeight="200.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+            <TextArea fx:id="textArea" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="272.0" prefWidth="491.0" wrapText="true" StackPane.alignment="CENTER">
+               <StackPane.margin>
+                  <Insets />
+               </StackPane.margin></TextArea>
+            <ImageView fx:id="dogImgViw" fitHeight="342.0" fitWidth="243.0" pickOnBounds="true" preserveRatio="true" visible="false" StackPane.alignment="CENTER_RIGHT">
                <image>
-                  <Image url="@../resources/elephant.png" />
+                  <Image url="@../resources/dog.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="privateKeyImgViw" fitHeight="151.0" fitWidth="237.0" pickOnBounds="true" preserveRatio="true" visible="false" StackPane.alignment="TOP_CENTER">
+               <image>
+                  <Image url="@../resources/key1.png" />
                </image>
                <StackPane.margin>
-                  <Insets bottom="10.0" left="40.0" right="10.0" top="10.0" />
+                  <Insets bottom="20.0" right="20.0" top="20.0" />
                </StackPane.margin>
             </ImageView>
-            <ImageView fx:id="snakeImgViw" fitHeight="200.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_RIGHT">
+            <ImageView fx:id="publicKeyImgViw" fitHeight="289.0" fitWidth="310.0" pickOnBounds="true" preserveRatio="true" visible="false" StackPane.alignment="TOP_LEFT">
                <image>
-                  <Image url="@../resources/snake.png" />
+                  <Image url="@../resources/publicKey.png" />
                </image>
                <StackPane.margin>
-                  <Insets right="40.0" />
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </StackPane.margin>
             </ImageView>
-            <TextArea fx:id="textArea" maxHeight="-Infinity" maxWidth="-Infinity" wrapText="true" prefHeight="200.0" prefWidth="400.0" />
+            <ImageView fx:id="roundKeyImgViw" fitHeight="245.0" fitWidth="156.0" pickOnBounds="true" preserveRatio="true" visible="false" StackPane.alignment="BOTTOM_LEFT">
+               <image>
+                  <Image url="@../resources/roundKeys.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="sharedKeyImgViw" visible="false" fitHeight="222.0" fitWidth="251.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_LEFT">
+               <image>
+                  <Image url="@../resources/sharedKey.png" />
+               </image>
+               <StackPane.margin>
+                  <Insets left="20.0" top="20.0" />
+               </StackPane.margin>
+            </ImageView>
+            <ImageView fx:id="poolImgViw" fitHeight="351.0" fitWidth="555.0" visible="false" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/pool.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="messageImgViw" fitHeight="150.0" fitWidth="200.0" visible="false" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_RIGHT">
+               <image>
+                  <Image url="@../resources/message.png" />
+               </image>
+               <StackPane.margin>
+                  <Insets right="20.0" top="20.0" />
+               </StackPane.margin></ImageView>
+            <HBox fx:id="signatureVector" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="900.0" visible="false" StackPane.alignment="BOTTOM_CENTER">
+               <children>
+                  <TextArea fx:id="signatureVector1" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="250.0" text="S(1)" visible="false" />
+                  <TextArea fx:id="signatureVector2" editable="false" layoutX="210.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="250.0" text="S(2)" visible="false" />
+                  <TextArea fx:id="signatureVector3" editable="false" layoutX="360.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="250.0" text="S(3)" visible="false" />
+                  <TextArea fx:id="signatureVector4" editable="false" layoutX="310.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="250.0" text="S(4)" visible="false" />
+                  <TextArea fx:id="signatureVector5" editable="false" layoutX="460.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="250.0" text="S(5)" visible="false" />
+                  <TextArea fx:id="signatureVector6" editable="false" layoutX="610.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="250.0" text="S(6)" visible="false" />
+               </children>
+               <StackPane.margin>
+                  <Insets bottom="20.0" />
+               </StackPane.margin>
+            </HBox>
          </children>
       </StackPane>
    </center>

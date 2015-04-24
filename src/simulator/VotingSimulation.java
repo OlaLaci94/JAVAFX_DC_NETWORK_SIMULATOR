@@ -1,10 +1,18 @@
 package simulator;
 
 import javafx.animation.Transition;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
 
 import java.util.ArrayList;
 
@@ -16,11 +24,15 @@ public class VotingSimulation extends Movement {
 
     Button backSimulatorBtn, pauseSimulatorBtn, playSimulatorBtn;
     StackPane stackPane;
-    ImageView snakeImgViw, elephantImgViw;
-    TextArea textArea;
+    ImageView snakeImgViw, elephantImgViw, dogImgViw, privateKeyImgViw, publicKeyImgViw, roundKeyImgViw, poolImgViw, messageImgViw, sharedKeyImgViw;
+    TextArea textArea, signatureVector1,signatureVector2,signatureVector3,signatureVector4,signatureVector5,signatureVector6;
+    HBox signatureVector;
 
     public VotingSimulation(Button backSimulatorBtn, Button pauseSimulatorBtn, Button playSimulatorBtn, StackPane stackPane,
-                           ImageView snakeImgViw, ImageView elephantImgViw, TextArea textArea){
+                            ImageView snakeImgViw,ImageView dogImgViw,ImageView privateKeyImgViw,ImageView publicKeyImgViw,ImageView roundKeyImgViw,
+                            ImageView poolImgViw, ImageView messageImgViw, ImageView elephantImgViw, TextArea textArea,
+                            TextArea signatureVector1,TextArea signatureVector2,TextArea signatureVector3,TextArea signatureVector4,TextArea signatureVector5,
+                            TextArea signatureVector6, HBox signatureVector, ImageView sharedKeyImgViw){
 
         this.backSimulatorBtn = backSimulatorBtn;
         this.pauseSimulatorBtn = pauseSimulatorBtn;
@@ -29,6 +41,20 @@ public class VotingSimulation extends Movement {
         this.snakeImgViw = snakeImgViw;
         this.elephantImgViw = elephantImgViw;
         this.textArea = textArea;
+        this.dogImgViw = dogImgViw;
+        this.privateKeyImgViw = privateKeyImgViw;
+        this.publicKeyImgViw = publicKeyImgViw;
+        this.roundKeyImgViw = roundKeyImgViw;
+        this.poolImgViw = poolImgViw;
+        this.messageImgViw = messageImgViw;
+        this.sharedKeyImgViw = sharedKeyImgViw;
+        this.signatureVector1 = signatureVector1;
+        this.signatureVector2 = signatureVector2;
+        this.signatureVector3 = signatureVector3;
+        this.signatureVector4 = signatureVector4;
+        this.signatureVector5 = signatureVector5;
+        this.signatureVector6 = signatureVector6;
+        this.signatureVector = signatureVector;
 
         tranArrList = new ArrayList<Transition>();
 
@@ -42,6 +68,23 @@ public class VotingSimulation extends Movement {
 
 
     public void part1(){
+
+        scaleTransition(4500.0, textArea, 2.0,2.0,2,true);
+        scaleTransition.setOnFinished(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+
+                Text t = new Text("bi red");
+                t.setFill(Color.AQUA);
+                Text tt = new Text("hjnmk");
+                tt.setFill(Color.BLUE);
+              TextFlow text = new TextFlow(t,tt);
+              
+              textArea.setText(StringBuilder);
+
+
+            }
+        });
 
         textArea.setText("Each participant chooses a secret key and a complementary public key, and participants compute their shared keys- using " +
                 "Diffie Hellman key exchange");

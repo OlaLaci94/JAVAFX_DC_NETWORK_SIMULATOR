@@ -14,18 +14,14 @@ public class Main extends Application {
     public static String mainScreenFile = "MainLayout.fxml";
     public static String threeCrypScreenID = "ControllerThree.java";
     public static String threeCrypScreenFile = "simulatorThreeLayout.fxml";
-    public static String fourCrypScreenID = "ControllerFour.java";
-    public static String fourCrypScreenFile = "simulatorFourLayout.fxml";
     public static String keyExchangeScreenID = "ControllerKeyExchange.java";
     public static String keyExchangeScreenFile = "simulatorKeyExchange.fxml";
     public static String manyParticipantsScreenID = "ControllerManyParticipants.java";
     public static String manyParticipantsScreenFile = "simulatorManyParticipants.fxml";
     public static String arbitraryAlphabetScreenID = "ControllerArbitraryAlphabet.java";
     public static String arbitraryAlphabetScreenFile = "simulatorArbitraryAlphabet.fxml";
-    public static String arbitraryLengthScreenID = "ControllerArbitraryLength.java";
-    public static String arbitraryLengthScreenFile = "simulatorArbitraryLength.fxml";
-    public static String discoScreenID = "ControllerArbitraryLength.java";
-    public static String discoScreenFile = "simulatorArbitraryLength.fxml";
+     public static String discoScreenID = "ControllerDisco.java";
+    public static String discoScreenFile = "simulatorDisco.fxml";
     public static String votingScreenID = "ControllerVoting.java";
     public static String votingScreenFile = "simulatorVoting.fxml";
     ScreenController screenController;
@@ -49,9 +45,7 @@ public class Main extends Application {
         screenController.loadScreen(Main.threeCrypScreenID, Main.threeCrypScreenFile);
         screenController.loadScreen(Main.keyExchangeScreenID, Main.keyExchangeScreenFile);
         screenController.loadScreen(Main.arbitraryAlphabetScreenID, Main.arbitraryAlphabetScreenFile);
-        screenController.loadScreen(Main.fourCrypScreenID,Main.fourCrypScreenFile);
-        screenController.loadScreen(Main.manyParticipantsScreenID, Main.manyParticipantsScreenFile);
-        screenController.loadScreen(Main.arbitraryLengthScreenID, Main.arbitraryLengthScreenFile);
+         screenController.loadScreen(Main.manyParticipantsScreenID, Main.manyParticipantsScreenFile);
         screenController.loadScreen(Main.discoScreenID, Main.discoScreenFile);
         screenController.loadScreen(Main.votingScreenID, Main.votingScreenFile);
 

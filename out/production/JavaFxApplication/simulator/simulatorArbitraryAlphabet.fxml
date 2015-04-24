@@ -73,12 +73,12 @@
                   <Insets bottom="50.0" />
                </StackPane.margin>
                <children>
-                  <TextArea fx:id="partialPad1" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" text="W(snake,mouse)(1)" visible="false" />
-                  <TextArea fx:id="partialPad2" editable="false" layoutX="210.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" text="W(snake,dog)(2)" visible="false" />
-                   <TextArea fx:id="partialPad3" editable="false" layoutX="360.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" text="W(snake,squirrel)(3)" visible="false" />
-                   <TextArea fx:id="partialPad4" editable="false" layoutX="310.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" text="W(snake,panda)(4)" visible="false" />
-                  <TextArea fx:id="partialPad5" editable="false" layoutX="460.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" text="W(snake,tiger)(5)" visible="false" />
-                  <TextArea fx:id="partialPad6" editable="false" layoutX="610.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" text="W(snake,cat)(6)" visible="false" />
+                   <TextArea fx:id="partialPad1" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="250.0" text="W(snake,mouse)(1)" visible="false" />
+                   <TextArea fx:id="partialPad2" editable="false" layoutX="210.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="250.0" text="W(snake,dog)(2)" visible="false" />
+                   <TextArea fx:id="partialPad3" editable="false" layoutX="360.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="250.0" text="W(snake,squirrel)(3)" visible="false" />
+                   <TextArea fx:id="partialPad4" editable="false" layoutX="310.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="250.0" text="W(snake,panda)(4)" visible="false" />
+                   <TextArea fx:id="partialPad5" editable="false" layoutX="460.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="250.0" text="W(snake,tiger)(5)" visible="false" />
+                   <TextArea fx:id="partialPad6" editable="false" layoutX="610.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="250.0" text="W(snake,cat)(6)" visible="false" />
                </children>
             </HBox>
             <ImageView fx:id="poolImgViw" fitHeight="421.0" fitWidth="659.0" pickOnBounds="true" preserveRatio="true" visible="false">

@@ -2,11 +2,14 @@ package simulator;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.Slider;
+import javafx.scene.control.ListView;
+import javafx.scene.control.cell.ComboBoxListCell;
+
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -17,19 +20,14 @@ import java.util.ResourceBundle;
 public class Controller implements ControlTemp, Initializable
 {
     ScreenController screenController;
-    ArrayList cryptographerList;
     int number;
-
-//    ControllerKeyExchange controllerKeyExchange;
+    ObservableList<String> options;
 
     @FXML
     private Button okMainBtn;
     @FXML
-    private Slider numOfCrypSlider;
-    @FXML
-    private RadioButton crypRadioBtn;
-    @FXML
-    private RadioButton nsaRadioBtn;
+    private ListView<String> listview;
+
 
 
 
@@ -48,7 +46,8 @@ public class Controller implements ControlTemp, Initializable
      */
     public void HandleMainGo()
     {
-        switchNumberOfCryp();
+
+        switchScenario();
     }
 
 
@@ -63,9 +62,14 @@ public class Controller implements ControlTemp, Initializable
 
         // initialize your logic here: all @FXML variables will have been injected
         assert okMainBtn != null : "fx:id=\"okMainBtn\" was not injected: check your FXML file 'MainLayout.fxml'.";
-        assert numOfCrypSlider != null : "fx:id=\"numOfCrypSlider\" was not injected: check your FXML file 'MainLayout.fxml'.";
-        assert crypRadioBtn != null : "fx:id=\"crypRadioBtn\" was not injected: check your FXML file 'MainLayout.fxml'.";
-        assert nsaRadioBtn != null : "fx:id=\"nsaRadioBtn\" was not injected: check your FXML file 'MainLayout.fxml'.";
+//        assert listView != null : "fx:id=\"listView\" was not injected: check your FXML file 'MainLayout.fxml'.";
+
+        options = FXCollections.observableArrayList(
+                "Basic Protocol", " Diffie Hellman Key Exchange", "Many Participants", "Arbitrary Alphabet", "Arbitrary Message Length and Disco Problem");
+
+        listview.setItems(options);
+
+
 
     }
 
@@ -73,62 +77,63 @@ public class Controller implements ControlTemp, Initializable
     /**
      *  Checks the value of number -- numOfCrypSlider user input-- and sets the screen according to the input
      */
-    public void switchNumberOfCryp()
+    public void switchScenario()
     {
 
-        //takes the numOfCrypSlider input and sets the value to number
-        number = (int) numOfCrypSlider.getValue();
-        numOfCrypSlider.valueProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue)
-            {
-                number = newValue.intValue();
-
-            }
-        });
-
+        int number = listview.getSelectionModel().getSelectedIndex();
 
         switch (number)
         {
-            case 3:
+            case 0:
+
+//                screenController.loadScreen(Main.votingScreenID, Main.votingScreenFile);
+//                Thread votingThrd = new Thread(screenController.controllerVoting);
+//                votingThrd.start();
+//                screenController.setScreen(Main.votingScreenID);
+
 
                 System.out.println("after controller.setScreen");
-                screenController.loadScreen(Main.threeCrypScreenID, Main.threeCrypScreenFile);
-                Thread controlThreeThrd = new Thread(screenController.controllerThree);
-                controlThreeThrd.start();
-                screenController.setScreen(Main.threeCrypScreenID);
+//                screenController.loadScreen(Main.threeCrypScreenID, Main.threeCrypScreenFile);
+//                Thread controlThreeThrd = new Thread(screenController.controllerThree);
+//                controlThreeThrd.start();
+//                screenController.setScreen(Main.threeCrypScreenID);
+//                break;
+
+            case 1:
+                screenController.loadScreen(Main.votingScreenID, Main.votingScreenFile);
+                Thread votingThrd = new Thread(screenController.controllerVoting);
+                votingThrd.start();
+                screenController.setScreen(Main.votingScreenID);
 
 
-
+//                System.out.println("in case 4");
+//                screenController.loadScreen(Main.arbitraryAlphabetScreenID, Main.arbitraryAlphabetScreenFile);
+//                Thread arbitraryAlphabetThrd = new Thread(screenController.controllerArbitraryAlphabet);
+//                arbitraryAlphabetThrd.start();
+//                screenController.setScreen(Main.arbitraryAlphabetScreenID);
                 break;
-            case 4:
-                System.out.println("in case 4");
-                screenController.loadScreen(Main.arbitraryAlphabetScreenID, Main.arbitraryAlphabetScreenFile);
-                Thread arbitraryAlphabetThrd = new Thread(screenController.controllerArbitraryAlphabet);
-                arbitraryAlphabetThrd.start();
-                screenController.setScreen(Main.arbitraryAlphabetScreenID);
 
-                break;
-            case 5:
+            case 2:
                 screenController.loadScreen(Main.keyExchangeScreenID, Main.keyExchangeScreenFile);
                 Thread keyExchangeThrd = new Thread(screenController.controllerKeyExchange);
                 keyExchangeThrd.start();
                 screenController.setScreen(Main.keyExchangeScreenID);
                 break;
-            case 6:
+
+            case 3:
                 screenController.loadScreen(Main.manyParticipantsScreenID, Main.manyParticipantsScreenFile);
                 Thread manyParticipantsThrd = new Thread(screenController.controllerManyParticipants);
                 manyParticipantsThrd.start();
                 screenController.setScreen(Main.manyParticipantsScreenID);
                break;
-            case 7:
-                screenController.loadScreen(Main.arbitraryLengthScreenID, Main.arbitraryLengthScreenFile);
-                Thread arbitraryLengthThrd = new Thread(screenController.controllerArbitraryLength);
-                arbitraryLengthThrd.start();
-                screenController.setScreen(Main.arbitraryLengthScreenID);
+            case 4:
+//                screenController.loadScreen(Main.votingScreenID, Main.votingScreenFile);
+//                Thread votingThrd = new Thread(screenController.controllerVoting);
+//                votingThrd.start();
+//                screenController.setScreen(Main.votingScreenID);
                 break;
 
-            case 8:
+            case 5:
                 screenController.loadScreen(Main.discoScreenID, Main.discoScreenFile);
                 Thread discoThrd = new Thread(screenController.controllerDisco);
                 discoThrd.start();
@@ -136,10 +141,7 @@ public class Controller implements ControlTemp, Initializable
 
                 break;
             case 9:
-                screenController.loadScreen(Main.votingScreenID, Main.votingScreenFile);
-                Thread votingThrd = new Thread(screenController.controllerVoting);
-                votingThrd.start();
-                screenController.setScreen(Main.votingScreenID);
+
 
                 break;
             case 10:
