@@ -9,6 +9,8 @@ import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.scene.text.TextFlow;
+import javafx.scene.web.WebView;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -27,11 +29,13 @@ public class ControllerVoting implements ControlTemp, Initializable, Runnable{
     @FXML
     private StackPane stackPane;
     @FXML
-    private ImageView snakeImgViw, dogImgViw, privateKeyImgViw, publicKeyImgViw, roundKeyImgViw, poolImgViw, messageImgViw, elephantImgViw, sharedKeyImgViw;
+    private ImageView snakeImgViw, dogImgViw, magnifyingGlassImgViw,commitmentImgViw, privateKeyImgViw, publicKeyImgViw, roundKeyImgViw, poolImgViw, messageImgViw, elephantImgViw, sharedKeyImgViw;
     @FXML
-    private TextArea textArea, signatureVector1,signatureVector2,signatureVector3,signatureVector4,signatureVector5,signatureVector6;
+    private TextArea  signatureVector1,signatureVector2,signatureVector3,signatureVector4,signatureVector5,signatureVector6, signatureVector7;
     @FXML
     private HBox signatureVector;
+    @FXML
+    private TextFlow textFlow;
 
 
     public void initialize(URL fxmlFileLocation, ResourceBundle resources){
@@ -49,7 +53,7 @@ public class ControllerVoting implements ControlTemp, Initializable, Runnable{
         assert roundKeyImgViw != null : "fx:id=\"roundKeyImgViw\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
         assert poolImgViw != null : "fx:id=\"poolImgViw\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
         assert messageImgViw != null : "fx:id=\"messageImgViw\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
-        assert textArea != null : "fx:id=\"textArea\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
+        assert textFlow != null : "fx:id=\"textFlow\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
         assert signatureVector1 != null : "fx:id=\"signatureVector1\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
         assert signatureVector2 != null : "fx:id=\"signatureVector2\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
         assert signatureVector3 != null : "fx:id=\"signatureVector3\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
@@ -58,6 +62,9 @@ public class ControllerVoting implements ControlTemp, Initializable, Runnable{
         assert signatureVector6 != null : "fx:id=\"signatureVector6\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
         assert signatureVector != null : "fx:id=\"signatureVector\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
         assert sharedKeyImgViw != null : "fx:id=\"sharedKeyImgViw\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
+        assert commitmentImgViw != null : "fx:id=\"commitmentImgViw\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
+        assert magnifyingGlassImgViw != null : "fx:id=\"magnifyingGlassImgViw\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
+
 
 
     }
@@ -67,8 +74,8 @@ public class ControllerVoting implements ControlTemp, Initializable, Runnable{
 
         votingSimulation = new VotingSimulation(backSimulatorBtn, pauseSimulatorBtn, playSimulatorBtn, stackPane,
                 snakeImgViw, dogImgViw, privateKeyImgViw, publicKeyImgViw, roundKeyImgViw, poolImgViw, messageImgViw, elephantImgViw,
-                textArea, signatureVector1,signatureVector2,signatureVector3,signatureVector4,signatureVector5,signatureVector6,
-                signatureVector, sharedKeyImgViw);
+                textFlow, signatureVector1,signatureVector2,signatureVector3,signatureVector4,signatureVector5,signatureVector6,
+                signatureVector, sharedKeyImgViw, signatureVector7, commitmentImgViw, magnifyingGlassImgViw);
         playSimulatorBtn.setDisable(true);
 
 
