@@ -54,7 +54,8 @@ public class ControllerArbitraryLength implements ControlTemp, Initializable, Ru
 
     public void run(){
 
-        arbitraryLengthAnimation = new ArbitraryLengthAnimation();
+        arbitraryLengthAnimation = new ArbitraryLengthAnimation( backSimulatorBtn,  pauseSimulatorBtn,  playSimulatorBtn,  stackPane,
+                 snakeImgViw,  elephantImgViw,  textArea);
 
     }
 

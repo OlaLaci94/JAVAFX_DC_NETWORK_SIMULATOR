@@ -13,12 +13,11 @@ import java.util.ResourceBundle;
 /**
  *  Controller class for simulatorThreeLayout.fxml. Handles all logic of this specific screen
  */
-public class ControllerThree implements ControlTemp, Initializable, Runnable {
-
+public class ControllerThree implements ControlTemp, Initializable, Runnable
+{
 
     ScreenController controller;
     BasicIdeaSimulation basicIdeaSimulation;
-
 
     @FXML
     private Button threeSimPauseBtn;

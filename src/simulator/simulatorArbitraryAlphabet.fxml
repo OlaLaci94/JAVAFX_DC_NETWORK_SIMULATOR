@@ -50,7 +50,7 @@
                   <Insets right="40.0" />
                </StackPane.margin>
             </ImageView>
-            <TextArea fx:id="textArea" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="200.0" prefWidth="400.0" />
+            <TextArea fx:id="textArea" maxHeight="-Infinity" maxWidth="-Infinity" wrapText="true" prefHeight="200.0" prefWidth="400.0" />
          </children>
       </StackPane>
    </center>
