@@ -22,7 +22,6 @@ public class VotingSimulation extends Movement {
     public VotingSimulation(Button backSimulatorBtn, Button pauseSimulatorBtn, Button playSimulatorBtn, StackPane stackPane,
                            ImageView snakeImgViw, ImageView elephantImgViw, TextArea textArea){
 
-
         this.backSimulatorBtn = backSimulatorBtn;
         this.pauseSimulatorBtn = pauseSimulatorBtn;
         this.playSimulatorBtn = playSimulatorBtn;
@@ -30,7 +29,6 @@ public class VotingSimulation extends Movement {
         this.snakeImgViw = snakeImgViw;
         this.elephantImgViw = elephantImgViw;
         this.textArea = textArea;
-
 
         tranArrList = new ArrayList<Transition>();
 

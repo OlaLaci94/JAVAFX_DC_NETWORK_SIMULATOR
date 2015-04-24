@@ -30,11 +30,17 @@ public class ArbitraryLengthAnimation extends Movement {
         this.elephantImgViw = elephantImgViw;
         this.textArea = textArea;
 
+
+        /**
+         * paraemter and key generation functions: same as arbitrary alpahbet. Pad construction visual-- vector construction (XOR of pad)--
+         * construction of subset s(does not include message position: illustrate this)-- posting of the vector and auxilary data. verification of
+         * auxillary data and message extraction . pad reconstruction same as arbitraryAlphabet
+         */
         tranArrList = new ArrayList<Transition>();
 
-        textArea.setText("The following illustration will show how to transmit messages of arbitrary length with unconditional anonymity. The protocol can work on any number of " +
-                "participants, and it is assumed that messages have been authenticated via digital signatures. Also, in practice a reservation round" +
-                " would be necessary for handling collisions. This protocol is similar to the Arbitrary Alphabet protocol and knowledge of that is " +
+        textArea.setText("The following illustration will show how to transmit messages of arbitrary length with unconditional anonymity. The protocol can work " +
+                "on any number of participants, and it is assumed that messages have been authenticated via digital signatures. Also, in practice a reservation round" +
+                " may be necessary for handling collisions to avoid message loss. This protocol is similar to the Arbitrary Alphabet protocol and knowledge of that is " +
                 "assumed.");
 
         part1();

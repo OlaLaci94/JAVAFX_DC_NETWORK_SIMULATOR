@@ -45,6 +45,8 @@ public class ControllerThree implements ControlTemp, Initializable, Runnable
     private ImageView elephantSpeechBubble;
     @FXML
     private ImageView dogSpeechBubble;
+    @FXML
+    private ImageView coinTailsImgViw;
 
 
     /**
@@ -79,6 +81,8 @@ public class ControllerThree implements ControlTemp, Initializable, Runnable
         assert dogSpeechBubble != null : "fx:id=\"dogSpeechBubble\" was not injected: check your FXML file 'simulatorThreeLayout.fxml'.";
         assert snakeSpeechBubbleSame != null : "fx:id=\"snakeSpeechBubbleSame\" was not injected: check your FXML file 'simulatorThreeLayout.fxml'.";
         assert snakeSpeechBubbleDifferent != null : "fx:id=\"snakeSpeechBubbleDifferent\" was not injected: check your FXML file 'simulatorThreeLayout.fxml'.";
+        assert coinTailsImgViw != null : "fx:id=\"coinTailsImgViw\" was not injected: check your FXML file 'simulatorThreeLayout.fxml'.";
+
 
 
 
@@ -88,7 +92,7 @@ public class ControllerThree implements ControlTemp, Initializable, Runnable
 
     public void run(){
 
-        basicIdeaSimulation = new BasicIdeaSimulation(
+        basicIdeaSimulation = new BasicIdeaSimulation(coinTailsImgViw,
                 snakeCryptographer,
                 elephantCryptographer,
                 dogCryptographer,

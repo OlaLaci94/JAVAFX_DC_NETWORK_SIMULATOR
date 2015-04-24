@@ -21,7 +21,7 @@ public class BasicIdeaSimulation extends Movement
 {
     //global variables used within the class
     ImageView dogCryptographer, coinImgViw, snakeCryptographer, elephantCryptographer, elephantSpeechBubble,
-            dogSpeechBubble, snakeSpeechBubbleSame, snakeSpeechBubbleDifferent;
+            dogSpeechBubble, snakeSpeechBubbleSame, snakeSpeechBubbleDifferent, coinTailsImgViw;
     StackPane simThreeStackPane;
     TextArea simThreeTextArea;
     String currentText;
@@ -40,7 +40,7 @@ public class BasicIdeaSimulation extends Movement
      * @param dogSpeechBubble
 
      */
-    public BasicIdeaSimulation(ImageView snakeCryptographer,  ImageView elephantCryptographer,  ImageView dogCryptographer,  ImageView coinImgViw,
+    public BasicIdeaSimulation(ImageView coinTailsImgViw, ImageView snakeCryptographer,  ImageView elephantCryptographer,  ImageView dogCryptographer,  ImageView coinImgViw,
                                StackPane simThreeStackPane,  TextArea simThreeTextArea, ImageView elephantSpeechBubble,
                                ImageView dogSpeechBubble,ImageView snakeSpeechBubbleSame, ImageView snakeSpeechBubbleDifferent ) {
 
@@ -54,6 +54,7 @@ public class BasicIdeaSimulation extends Movement
         this.dogSpeechBubble = dogSpeechBubble;
         this.snakeSpeechBubbleSame = snakeSpeechBubbleSame;
         this.snakeSpeechBubbleDifferent = snakeSpeechBubbleDifferent;
+        this.coinTailsImgViw = coinTailsImgViw;
 
         textAreaDbx = simThreeTextArea.getTranslateX();
         tranArrList = new ArrayList<Transition>();
@@ -65,7 +66,7 @@ public class BasicIdeaSimulation extends Movement
         simThreeTextArea.setText(currentText);
 
         basicThree0();
-
+//        basicThree2();
 
     }
 
@@ -171,28 +172,28 @@ public class BasicIdeaSimulation extends Movement
                 translateTransitionX(2000.0, elephantCryptographer, elephantCryptographer.getX(), elephantCryptographer.getX()-100, 1, false);
                 textAreax = simThreeTextArea.getTranslateX();
                 textAreaAfterx = simThreeTextArea.getTranslateX() + simThreeTextArea.getWidth() / 2;
-                translateTransitionX(500.0, coinImgViw, coinImgViw.getX(), coinImgViw.getX() - (simThreeStackPane.getWidth() / 15) * 9, 1, false);
+                translateTransitionX(500.0, coinTailsImgViw, coinTailsImgViw.getX(), coinTailsImgViw.getX() - (simThreeStackPane.getWidth() / 15) * 9, 1, false);
 
                 translateTransitionX(2000.0, simThreeTextArea, simThreeTextArea.getTranslateX(), textAreaAfterx, 1, false);
 //                rotateTransition(1000.0, elephantCryptographer, 1, 0.0, 180.0, 1, false);
                 tranArrList.get(tranArrList.size() - 1).setOnFinished(new EventHandler<ActionEvent>() {
                     @Override
                     public void handle(ActionEvent event) {
-                        coinImgViw.setVisible(true);
+                        coinTailsImgViw.setVisible(true);
 //                        scaleTransition(2000.0, simThreeTextArea,1.0,1.5,2,true);
 
-//                        rotateTransition(1000.0, elephantCryptographer, 1, 0.0, 180.0, 1, false);
+                        rotateTransition(1000.0, elephantCryptographer, 1, 0.0, 180.0, 2, true);
                         rotateTransition(1000.0, snakeCryptographer, 1, 0.0, 180.0, 1, false);
 
-                        rotateTransition(500.0, coinImgViw, 0, 0.0, 720.0, 5, false);
+                        rotateTransition(500.0, coinTailsImgViw, 0, 0.0, 720.0, 5, false);
                         System.out.println("stackpane height: " + simThreeStackPane.getHeight());
-                        translateTransitionY(2500.0, coinImgViw, coinImgViw.getY(), coinImgViw.getY() - (simThreeStackPane.getHeight() / 7) * 5, 1, true);
+                        translateTransitionY(2500.0, coinTailsImgViw, coinTailsImgViw.getY(), coinTailsImgViw.getY() - (simThreeStackPane.getHeight() / 7) * 5, 1, true);
 
                         tranArrList.get(tranArrList.size() - 1).setOnFinished(new EventHandler<ActionEvent>() {
                             @Override
                             public void handle(ActionEvent event) {
-                                rotateTransition(500.0, coinImgViw, 0, 0.0, 720.0, 5, false);
-                                translateTransitionY(2500.0, coinImgViw, coinImgViw.getY() - (simThreeStackPane.getHeight() / 7) * 5, coinImgViw.getY(), 1, true);
+                                rotateTransition(500.0, coinTailsImgViw, 0, 0.0, 720.0, 5, false);
+                                translateTransitionY(2500.0, coinTailsImgViw, coinTailsImgViw.getY() - (simThreeStackPane.getHeight() / 7) * 5, coinTailsImgViw.getY(), 1, true);
 
                                 tranArrList.get(tranArrList.size() - 1).setOnFinished(new EventHandler<ActionEvent>() {
                                     @Override
@@ -200,7 +201,7 @@ public class BasicIdeaSimulation extends Movement
                                         simThreeTextArea.setText("The coin lands on heads and both the elephant and the snake cryptographers see that. However the snake has no way of seeing it.");
                                         scaleTransition(2000.0, simThreeTextArea, 1.5, 1.5, 2, true);
 
-                                        coinImgViw.setVisible(false);
+                                        coinTailsImgViw.setVisible(false);
                                         translateTransitionX(2000.0, snakeCryptographer, dogCryptographer.getX() - (simThreeStackPane.getWidth() / 5) * 4, dogCryptographer.getX(), 1, false);
                                         translateTransitionX(2000.0, elephantCryptographer, elephantCryptographer.getX() - 100, elephantCryptographer.getX(), 1, false);
                                         translateTransitionX(2000.0, simThreeTextArea, textAreaAfterx, textAreax, 1, false);
@@ -209,6 +210,7 @@ public class BasicIdeaSimulation extends Movement
                                         tranArrList.get(tranArrList.size() - 1).setOnFinished(new EventHandler<ActionEvent>() {
                                             @Override
                                             public void handle(ActionEvent event) {
+
                                                 basicThree2();
                                             }
                                         });
@@ -239,37 +241,41 @@ public class BasicIdeaSimulation extends Movement
 
                 textAreax = simThreeTextArea.getTranslateX();
                 textAreaAfterx = simThreeTextArea.getTranslateX() + (simThreeStackPane.getWidth() / 5) * 1;
+                Double textAreay = simThreeTextArea.getTranslateY();
+                Double textAreaAftery = simThreeTextArea.getTranslateY()/8;
                 translateTransitionX(500.0, coinImgViw, coinImgViw.getX(), coinImgViw.getX() - (simThreeStackPane.getWidth() / 2) * 1, 1, false);
                 rotateTransition(1000.0, snakeCryptographer, 1, 0.0, 180.0, 1, false);
                 rotateTransition(1000.0, dogCryptographer, 1, 0.0, 180.0, 1, false);
                 translateTransitionX(2000.0, simThreeTextArea, simThreeTextArea.getTranslateX(), textAreaAfterx, 1, false);
+                translateTransitionY(1000.0, simThreeTextArea, textAreay, textAreaAftery, 1,false);
 
                 tranArrList.get(tranArrList.size() - 1).setOnFinished(new EventHandler<ActionEvent>() {
                     @Override
                     public void handle(ActionEvent event)
                     {
                         coinImgViw.setVisible(true);
+                        rotateTransition(500.0, coinImgViw, 0, 0.0, 720.0, 5, false);
+                        translateTransitionY(2500.0, coinImgViw, coinImgViw.getY(), coinImgViw.getY() - 500, 1, true);
 
-                        simThreeTextArea.setText("The coin lands on heads and both cryptographers see that. However the elephant has no way of seeing it");
-                        scaleTransition(1000.0, simThreeTextArea, 1.5, 1.5, 2, true);
                         tranArrList.get(tranArrList.size()-1).setOnFinished(new EventHandler<ActionEvent>() {
                             @Override
                             public void handle(ActionEvent event) {
 
-                        rotateTransition(500.0, coinImgViw, 0, 0.0, 720.0, 5, false);
-                        translateTransitionY(2500.0, coinImgViw, coinImgViw.getY(), coinImgViw.getY() - 500, 1, true);
-
-                        tranArrList.get(tranArrList.size() - 1).setOnFinished(new EventHandler<ActionEvent>() {
-                            @Override
-                            public void handle(ActionEvent event) {
                                 rotateTransition(500.0, coinImgViw, 0, 0.0, 720.0, 5, false);
                                 translateTransitionY(2500.0, coinImgViw, coinImgViw.getY() - 500, coinImgViw.getY(), 1, true);
+
+                                tranArrList.get(tranArrList.size() - 1).setOnFinished(new EventHandler<ActionEvent>() {
+                            @Override
+                            public void handle(ActionEvent event) {
+
+                                simThreeTextArea.setText("The coin lands on heads and both cryptographers see that. However the elephant has no way of seeing it");
+                                scaleTransition(1000.0, simThreeTextArea, 1.5, 1.5, 2, true);
 
                                 tranArrList.get(tranArrList.size() - 1).setOnFinished(new EventHandler<ActionEvent>() {
                                     @Override
                                     public void handle(ActionEvent event) {
 
-                                        sleeping(1000.0);
+                                        sleeping(500.0);
 
                                         coinImgViw.setVisible(false);
 
@@ -365,7 +371,7 @@ public class BasicIdeaSimulation extends Movement
                                                     @Override
                                                     public void handle(ActionEvent event) {
                                                         simThreeTextArea.setText("Also, note that this protocol is non- interactive as the participants do not have any direct communication after" +
-                                                                " establishing the shared keys.");
+                                                                " establishing the shared keys. The end.");
 
                                                         scaleTransition(8000.0, simThreeTextArea, 2.75, 2.75, 2, true);
 

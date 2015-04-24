@@ -36,7 +36,7 @@
             </ImageView>
             <ImageView fx:id="coinImgViw" fitHeight="103.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" visible="false" StackPane.alignment="BOTTOM_RIGHT">
                <image>
-                  <Image url="@../resources/goldCoin.png" />
+                  <Image url="@../resources/coin.gif" />
                </image>
                <StackPane.margin>
                   <Insets bottom="20.0" left="20.0" right="100.0" />
@@ -75,6 +75,14 @@
                </StackPane.margin>
             </ImageView>
             <TextArea fx:id="simThreeTextArea" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="400.0" wrapText="true" StackPane.alignment="CENTER" />
+            <ImageView fx:id="coinTailsImgViw" fitHeight="103.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" visible="false" StackPane.alignment="BOTTOM_RIGHT">
+               <image>
+                  <Image url="@../resources/cointails.gif" />
+               </image>
+               <StackPane.margin>
+                  <Insets bottom="20.0" left="20.0" right="100.0" />
+               </StackPane.margin>
+            </ImageView>
          </children>
       </StackPane>
    </center>

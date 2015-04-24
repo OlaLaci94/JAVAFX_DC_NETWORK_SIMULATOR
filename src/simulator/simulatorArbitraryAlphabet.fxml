@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.control.*?>
@@ -34,7 +35,7 @@
    <center>
       <StackPane fx:id="stackPane" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fx:id="elephantImgViw" fitHeight="200.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+            <ImageView fx:id="elephantImgViw" fitHeight="196.0" fitWidth="260.0" pickOnBounds="true" visible="false" preserveRatio="true" StackPane.alignment="TOP_LEFT">
                <image>
                   <Image url="@../resources/elephant.png" />
                </image>
@@ -42,7 +43,7 @@
                   <Insets bottom="10.0" left="40.0" right="10.0" top="10.0" />
                </StackPane.margin>
             </ImageView>
-            <ImageView fx:id="snakeImgViw" fitHeight="200.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_RIGHT">
+            <ImageView fx:id="snakeImgViw" fitHeight="242.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true" visible="false" StackPane.alignment="CENTER_RIGHT">
                <image>
                   <Image url="@../resources/snake.png" />
                </image>
@@ -50,7 +51,46 @@
                   <Insets right="40.0" />
                </StackPane.margin>
             </ImageView>
-            <TextArea fx:id="textArea" maxHeight="-Infinity" maxWidth="-Infinity" wrapText="true" prefHeight="200.0" prefWidth="400.0" />
+            <TextArea fx:id="textArea" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="262.0" prefWidth="509.0" wrapText="true" />
+            <ImageView fx:id="keyImgViw" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" visible="false" StackPane.alignment="TOP_RIGHT">
+               <image>
+                  <Image url="@../resources/key1.png" />
+               </image>
+               <StackPane.margin>
+                  <Insets right="50.0" top="50.0" />
+               </StackPane.margin>
+            </ImageView>
+            <ImageView fx:id="keyImgViw1" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" visible="false" StackPane.alignment="TOP_LEFT">
+               <image>
+                  <Image url="@../resources/key1.png" />
+               </image>
+               <StackPane.margin>
+                  <Insets left="50.0" top="50.0" />
+               </StackPane.margin>
+            </ImageView>
+            <HBox fx:id="vector" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="900.0" visible="false" StackPane.alignment="BOTTOM_CENTER">
+               <StackPane.margin>
+                  <Insets bottom="50.0" />
+               </StackPane.margin>
+               <children>
+                  <TextArea fx:id="partialPad1" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" text="W(snake,mouse)(1)" visible="false" />
+                  <TextArea fx:id="partialPad2" editable="false" layoutX="210.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" text="W(snake,dog)(2)" visible="false" />
+                   <TextArea fx:id="partialPad3" editable="false" layoutX="360.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" text="W(snake,squirrel)(3)" visible="false" />
+                   <TextArea fx:id="partialPad4" editable="false" layoutX="310.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" text="W(snake,panda)(4)" visible="false" />
+                  <TextArea fx:id="partialPad5" editable="false" layoutX="460.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" text="W(snake,tiger)(5)" visible="false" />
+                  <TextArea fx:id="partialPad6" editable="false" layoutX="610.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" text="W(snake,cat)(6)" visible="false" />
+               </children>
+            </HBox>
+            <ImageView fx:id="poolImgViw" fitHeight="421.0" fitWidth="659.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../resources/pool.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="alphaImgViw" fitHeight="150.0" fitWidth="200.0" visible="false" pickOnBounds="true" preserveRatio="true" StackPane.alignment="BOTTOM_LEFT">
+               <image>
+                  <Image url="@../resources/alpha.png" />
+               </image>
+            </ImageView>
          </children>
       </StackPane>
    </center>
