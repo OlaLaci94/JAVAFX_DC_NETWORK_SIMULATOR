@@ -64,6 +64,7 @@ public class Main extends Application {
 
         //sets the scene
         primaryStage.setScene(scene);
+
         //shows the stage
         primaryStage.show();
 

@@ -10,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.cell.ComboBoxListCell;
 
+import javax.swing.*;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -65,9 +66,10 @@ public class Controller implements ControlTemp, Initializable
 //        assert listView != null : "fx:id=\"listView\" was not injected: check your FXML file 'MainLayout.fxml'.";
 
         options = FXCollections.observableArrayList(
-                "Basic Protocol", " Diffie Hellman Key Exchange", "Many Participants", "Arbitrary Alphabet", "Arbitrary Message Length and Disco Problem");
+                "Basic Protocol", " Diffie Hellman Key Exchange", "Many Participants", "Arbitrary Alphabet", "Arbitrary Message Length and Disco Problem", "Voting");
 
         listview.setItems(options);
+
 
 
 
@@ -85,66 +87,40 @@ public class Controller implements ControlTemp, Initializable
         switch (number)
         {
             case 0:
-
-//                screenController.loadScreen(Main.votingScreenID, Main.votingScreenFile);
-//                Thread votingThrd = new Thread(screenController.controllerVoting);
-//                votingThrd.start();
-//                screenController.setScreen(Main.votingScreenID);
-
-
-                System.out.println("after controller.setScreen");
-//                screenController.loadScreen(Main.threeCrypScreenID, Main.threeCrypScreenFile);
-//                Thread controlThreeThrd = new Thread(screenController.controllerThree);
-//                controlThreeThrd.start();
-//                screenController.setScreen(Main.threeCrypScreenID);
-//                break;
-
-            case 1:
-                screenController.loadScreen(Main.votingScreenID, Main.votingScreenFile);
-                Thread votingThrd = new Thread(screenController.controllerVoting);
-                votingThrd.start();
-                screenController.setScreen(Main.votingScreenID);
-
-
-//                System.out.println("in case 4");
-//                screenController.loadScreen(Main.arbitraryAlphabetScreenID, Main.arbitraryAlphabetScreenFile);
-//                Thread arbitraryAlphabetThrd = new Thread(screenController.controllerArbitraryAlphabet);
-//                arbitraryAlphabetThrd.start();
-//                screenController.setScreen(Main.arbitraryAlphabetScreenID);
+                screenController.loadScreen(Main.threeCrypScreenID, Main.threeCrypScreenFile);
+                Thread controlThreeThrd = new Thread(screenController.controllerThree);
+                controlThreeThrd.start();
+                screenController.setScreen(Main.threeCrypScreenID);
                 break;
-
+               case 1:
+                   screenController.loadScreen(Main.keyExchangeScreenID, Main.keyExchangeScreenFile);
+                   Thread keyExchangeThrd = new Thread(screenController.controllerKeyExchange);
+                   keyExchangeThrd.start();
+                   screenController.setScreen(Main.keyExchangeScreenID);
+                   break;
             case 2:
-                screenController.loadScreen(Main.keyExchangeScreenID, Main.keyExchangeScreenFile);
-                Thread keyExchangeThrd = new Thread(screenController.controllerKeyExchange);
-                keyExchangeThrd.start();
-                screenController.setScreen(Main.keyExchangeScreenID);
-                break;
-
-            case 3:
                 screenController.loadScreen(Main.manyParticipantsScreenID, Main.manyParticipantsScreenFile);
                 Thread manyParticipantsThrd = new Thread(screenController.controllerManyParticipants);
                 manyParticipantsThrd.start();
                 screenController.setScreen(Main.manyParticipantsScreenID);
-               break;
-            case 4:
-//                screenController.loadScreen(Main.votingScreenID, Main.votingScreenFile);
-//                Thread votingThrd = new Thread(screenController.controllerVoting);
-//                votingThrd.start();
-//                screenController.setScreen(Main.votingScreenID);
                 break;
-
-            case 5:
+            case 3:
+                screenController.loadScreen(Main.arbitraryAlphabetScreenID, Main.arbitraryAlphabetScreenFile);
+                Thread arbitraryAlphabetThrd = new Thread(screenController.controllerArbitraryAlphabet);
+                arbitraryAlphabetThrd.start();
+                screenController.setScreen(Main.arbitraryAlphabetScreenID);
+                break;
+            case 4:
                 screenController.loadScreen(Main.discoScreenID, Main.discoScreenFile);
                 Thread discoThrd = new Thread(screenController.controllerDisco);
                 discoThrd.start();
                 screenController.setScreen(Main.discoScreenID);
-
                 break;
-            case 9:
-
-
-                break;
-            case 10:
+            case 5:
+                screenController.loadScreen(Main.votingScreenID, Main.votingScreenFile);
+                Thread votingThrd = new Thread(screenController.controllerVoting);
+                votingThrd.start();
+                screenController.setScreen(Main.votingScreenID);
                 break;
             default:
                 System.out.println(" switchNumberOfCryp not working; in default case");

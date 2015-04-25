@@ -67,6 +67,7 @@ public class ControllerVoting implements ControlTemp, Initializable, Runnable{
 
 
 
+
     }
 
 

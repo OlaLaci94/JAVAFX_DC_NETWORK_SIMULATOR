@@ -93,6 +93,7 @@ public class ScreenController extends StackPane
             else if(resource.equals(Main.discoScreenFile)){
 
                 controllerDisco = (ControllerDisco) fxmlLoader.getController();
+
             }
             else if(resource.equals(Main.votingScreenFile)){
 

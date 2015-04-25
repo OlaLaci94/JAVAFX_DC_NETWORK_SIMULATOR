@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
+import javafx.scene.text.TextFlow;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -22,25 +23,15 @@ public class ControllerKeyExchange implements ControlTemp, Initializable, Runnab
     DiffieHelmanKeyExchange dhKeyExchange;
 
     @FXML
-    private Button backSimulatorBtn;
+    private Button backSimulatorBtn, playSimulatorBtn,pauseSimulatorBtn;
     @FXML
-    private Button  pauseSimulatorBtn;
+    private TextFlow textFlow;
     @FXML
-    private Button playSimulatorBtn;
+    private ImageView dogImgViw, elephantImgViw, dogPrivateKey, dogPublicKey, elephantPrivateKey, elephantPublicKey, alphaImgViw, pImgViw;
     @FXML
     private StackPane stackPane;
-    @FXML
-    private ImageView snakeImgViw;
-    @FXML
-    private ImageView elephantImgViw;
-    @FXML
-    private TextArea textArea;
-    @FXML
-    private ImageView dogImgViw;
-    @FXML
-    private TextArea elephantTextArea;
-    @FXML
-    private TextArea snakeTextArea;
+
+
 
 
 
@@ -52,26 +43,29 @@ public class ControllerKeyExchange implements ControlTemp, Initializable, Runnab
         assert pauseSimulatorBtn != null : "fx:id=\"pauseSimulatorBtn\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
         assert playSimulatorBtn != null : "fx:id=\"playSimulatorBtn\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
         assert stackPane != null : "fx:id=\"stackPane\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
-        assert snakeImgViw != null : "fx:id=\"snakeImgViw\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
+        assert textFlow != null : "fx:id=\"textFlow\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
         assert elephantImgViw != null : "fx:id=\"elephantImgViw\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
-        assert textArea != null : "fx:id=\"textArea\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
+        assert dogPrivateKey != null : "fx:id=\"dogPrivateKey\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
         assert dogImgViw != null : "fx:id=\"dogImgViw\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
-        assert elephantTextArea != null : "fx:id=\"elephantTextArea\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
-        assert snakeTextArea != null : "fx:id=\"snakeTextArea\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
+        assert dogPublicKey != null : "fx:id=\"dogPublicKey\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
+        assert elephantPrivateKey != null : "fx:id=\"elephantPrivateKey\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
+        assert elephantPublicKey != null : "fx:id=\"elephantPublicKey\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
+        assert alphaImgViw != null : "fx:id=\"alphaImgViw\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
+        assert pImgViw != null : "fx:id=\"pImgViw\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
 
 
     }
 
     public void run(){
 
-        dhKeyExchange = new DiffieHelmanKeyExchange(backSimulatorBtn,  pauseSimulatorBtn,  playSimulatorBtn,  stackPane,
-                 snakeImgViw,  elephantImgViw,  dogImgViw,  textArea, elephantTextArea,  snakeTextArea);
+        dhKeyExchange = new DiffieHelmanKeyExchange(backSimulatorBtn, playSimulatorBtn,pauseSimulatorBtn, textFlow, dogImgViw,
+                elephantImgViw, dogPrivateKey, dogPublicKey, elephantPrivateKey, elephantPublicKey, alphaImgViw, pImgViw, stackPane);
 
         playSimulatorBtn.setDisable(true);
 
     }
 
-    public void kESimBack()
+    public void backKey()
     {
         for(int i = 0; i<dhKeyExchange.tranArrList.size(); i++){
 
@@ -82,7 +76,7 @@ public class ControllerKeyExchange implements ControlTemp, Initializable, Runnab
         screenController.setScreen(Main.mainScreenID);
     }
 
-    public void kESimPause(){
+    public void pauseKey(){
         for(Transition tran: dhKeyExchange.tranArrList){
 
             if( tran.getStatus().equals(Animation.Status.RUNNING)){
@@ -96,7 +90,7 @@ public class ControllerKeyExchange implements ControlTemp, Initializable, Runnab
         playSimulatorBtn.setDisable(false);
     }
 
-    public void kESimPlay(){
+    public void playKey(){
         for(Transition tran: dhKeyExchange.tranArrList){
 
             if( tran.getStatus().equals(Animation.Status.PAUSED)){

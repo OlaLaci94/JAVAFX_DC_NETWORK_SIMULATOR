@@ -131,6 +131,12 @@ public class VotingSimulation extends Movement {
                                 tranArrList.get(tranArrList.size()-1).setOnFinished(new EventHandler<ActionEvent>() {
                                     @Override
                                     public void handle(ActionEvent event) {
+                                        translateTransitionX(2000.0, dogImgViw, dogImgViw.getX(), dogImgViw.getX()+stackPane.getWidth()/3, 1,false);
+
+
+                                tranArrList.get(tranArrList.size()-1).setOnFinished(new EventHandler<ActionEvent>() {
+                                    @Override
+                                    public void handle(ActionEvent event) {
 
                                         sharedKeyImgViw.setVisible(false);
 
@@ -170,7 +176,7 @@ public class VotingSimulation extends Movement {
                                                             @Override
                                                             public void handle(ActionEvent event) {
                                                                 poolImgViw.setVisible(true);
-                                                                translateTransitionY(2000.0, signatureVector, signatureVector.getTranslateY(), signatureVector.getTranslateY() - stackPane.getHeight() / 2, 1, false);
+                                                                translateTransitionY(2000.0, signatureVector, signatureVector.getTranslateY(), signatureVector.getTranslateY() - (stackPane.getHeight()/3)*2, 1, false);
                                                                 fadeTransition(2000.0, signatureVector, 1.0, 0.0, 1, false);
 
                                                                 tranArrList.get(tranArrList.size()-1).setOnFinished(new EventHandler<ActionEvent>() {
@@ -193,8 +199,13 @@ public class VotingSimulation extends Movement {
                                                                             @Override
                                                                             public void handle(ActionEvent event) {
 
-                                                                                poolImgViw.setVisible(true);
-                                                                                translateTransitionY(2000.0, signatureVector, signatureVector.getTranslateY()-stackPane.getHeight() / 2, signatureVector.getTranslateY() , 1, false);
+                                                                                translateTransitionY(500.0, signatureVector, signatureVector.getTranslateY(), signatureVector.getTranslateY()+(stackPane.getHeight()/3)*2, 1, false);
+                                                                                tranArrList.get(tranArrList.size()-1).setOnFinished(new EventHandler<ActionEvent>() {
+                                                                                    @Override
+                                                                                    public void handle(ActionEvent event) {
+
+//                                                                                poolImgViw.setVisible(true);
+                                                                                translateTransitionY(2000.0, signatureVector, signatureVector.getTranslateY()+(stackPane.getHeight()/3)*2, signatureVector.getTranslateY() , 1, false);
                                                                                 fadeTransition(2000.0, signatureVector, 0.0,1.0, 1, false);
 
                                                                                 tranArrList.get(tranArrList.size()-1).setOnFinished(new EventHandler<ActionEvent>() {
@@ -204,7 +215,7 @@ public class VotingSimulation extends Movement {
                                                                                         tranArrList.get(tranArrList.size()-1).setOnFinished(new EventHandler<ActionEvent>() {
                                                                                             @Override
                                                                                             public void handle(ActionEvent event) {
-                                                                                                poolImgViw.setVisible(false);
+//                                                                                                poolImgViw.setVisible(false);
                                                                                                 Text text = new Text("If the number of 1's in the generated vector is less than the number of participants, collisions have occurred," +
                                                                                                         " resulting in an unsuccessful slot reservation round and a repetition of the protocol.");
                                                                                                 textFlow.getChildren().setAll(text);
@@ -221,14 +232,16 @@ public class VotingSimulation extends Movement {
                                                                                                     @Override
                                                                                                     public void handle(ActionEvent event) {
 
-                                                                                                        poolImgViw.setVisible(true);
-                                                                                                        translateTransitionY(2000.0, signatureVector, signatureVector.getTranslateY(), signatureVector.getTranslateY()-stackPane.getHeight()/2, 1, false);
+//
+
+//                                                                                                        translateTransitionY(2000.0, signatureVector, signatureVector.getTranslateY(), signatureVector.getTranslateY() + (stackPane.getHeight() / 3) * 2, 1, false);
                                                                                                         fadeTransition(2000.0, signatureVector, 0.0,1.0, 1, false);
+                                                                                                                scaleTransition(1500.0, signatureVector,1.25,1.25,2,true);
 
                                                                                                         tranArrList.get(tranArrList.size()-1).setOnFinished(new EventHandler<ActionEvent>() {
                                                                                                             @Override
                                                                                                             public void handle(ActionEvent event) {
-                                                                                                                poolImgViw.setVisible(false);
+//                                                                                                                poolImgViw.setVisible(false);
                                                                                                                 Text text = new Text("If the number of 1's in the generated vector is more than the number of participants, cor a participant cannot," +
                                                                                                                         " identify their position, someone has violated the protocol and an investigation stage must occur.");
                                                                                                                 textFlow.getChildren().setAll(text);
@@ -246,16 +259,24 @@ public class VotingSimulation extends Movement {
                                                                                                                     @Override
                                                                                                                     public void handle(ActionEvent event) {
 
-                                                                                                                        poolImgViw.setVisible(true);
-                                                                                                                        signatureVector7.setVisible(true);
-                                                                                                                        translateTransitionY(2000.0, signatureVector, signatureVector.getTranslateY() , signatureVector.getTranslateY()- stackPane.getHeight() / 2, 1, false);
-                                                                                                                        fadeTransition(2000.0, signatureVector, 0.0,1.0, 1, false);
+//                                                                                                                        poolImgViw.setVisible(true);
+//                                                                                                                        translateTransitionY(500.0, signatureVector, signatureVector.getTranslateY(), signatureVector.getTranslateY()+(stackPane.getHeight()/3)*2, 1, false);
+
+                                                                                                                        scaleTransition(2000.0, signatureVector,1.5,1.5,2,true);
+                                                                                                                        tranArrList.get(tranArrList.size()-1).setOnFinished(new EventHandler<ActionEvent>() {
+                                                                                                                            @Override
+                                                                                                                            public void handle(ActionEvent event) {
+
+                                                                                                                                fadeTransition(2000.0, signatureVector, 0.0,1.0, 1, false);
+
+                                                                                                                                signatureVector7.setVisible(true);
+//
+                                                                                                                                scaleTransition(1500.0, signatureVector,1.25,1.25,2,true);
 
                                                                                                                         tranArrList.get(tranArrList.size()-1).setOnFinished(new EventHandler<ActionEvent>() {
                                                                                                                             @Override
                                                                                                                             public void handle(ActionEvent event) {
 
-                                                                                                                         poolImgViw.setVisible(false);
                                                                                                                         Text text = new Text("After a successful reservation round, the participants compute their respective ");
                                                                                                                          Text text1 = new Text("message, ");
                                                                                                                                 text1.setFill(Color.CHOCOLATE);
@@ -269,10 +290,11 @@ public class VotingSimulation extends Movement {
                                                                                                                                 tranArrList.get(tranArrList.size()-1).setOnFinished(new EventHandler<ActionEvent>() {
                                                                                                                                     @Override
                                                                                                                                     public void handle(ActionEvent event) {
+                                                                                                                                        fadeTransition(1000.0, signatureVector, 1.0,0.0, 1,false);
                                                                                                                                         messageImgViw.setVisible(true);
                                                                                                                                         roundKeyImgViw.setVisible(true);
-                                                                                                                                        translateTransitionX(2500.0, messageImgViw, messageImgViw.getX(), messageImgViw.getX()-stackPane.getWidth()/2, 1, false);
-                                                                                                                                        translateTransitionX(2500.0, roundKeyImgViw, roundKeyImgViw.getX(), roundKeyImgViw.getX()+stackPane.getWidth()/2, 1, false);
+                                                                                                                                        translateTransitionX(2500.0, messageImgViw, messageImgViw.getX(), messageImgViw.getX()-(stackPane.getWidth()/2.5), 1, false);
+                                                                                                                                        translateTransitionX(2500.0, roundKeyImgViw, roundKeyImgViw.getX(), roundKeyImgViw.getX()+(stackPane.getWidth()/2.5), 1, false);
                                                                                                                                         rotateTransition(1250.0, messageImgViw,1,0.0,360.0,2,false);
                                                                                                                                         rotateTransition(1250.0, roundKeyImgViw,1,0.0,360.0,2,false);
 
@@ -287,8 +309,9 @@ public class VotingSimulation extends Movement {
                                                                                                                                                 Text text6 = new Text("The ");
                                                                                                                                                 Text text7 = new Text("commitments ");
                                                                                                                                                 text7.setFill(Color.GOLD);
-                                                                                                                                                Text text8 = new Text("are published and checked. If the commitments hold, the participants publish their exponent vectors- which after verification form the ballot of participants.");
-                                                                                                                                                textFlow.getChildren().addAll(text6, text7, text8);
+                                                                                                                                                Text text8 = new Text("are published and checked. If the commitments hold, the participants publish their exponent vectors- " +
+                                                                                                                                                        "which after verification form the ballot of participants.");
+                                                                                                                                                textFlow.getChildren().setAll(text6, text7, text8);
 
                                                                                                                                                 scaleTransition(4500.0, textFlow, 2.0,2.0,2,true);
 
@@ -297,14 +320,14 @@ public class VotingSimulation extends Movement {
                                                                                                                                                     public void handle(ActionEvent event) {
 
                                                                                                                                                         Text text9 = new Text("If a commitment does not hold, someone has violated the protocol and an investigation stage is performed.");
-                                                                                                                                                        textFlow.getChildren().addAll(text9);
+                                                                                                                                                        textFlow.getChildren().setAll(text9);
                                                                                                                                                         scaleTransition(2000.0, textFlow, 1.5,1.5,2, true);
 
                                                                                                                                                         tranArrList.get(tranArrList.size()-1).setOnFinished(new EventHandler<ActionEvent>() {
                                                                                                                                                             @Override
                                                                                                                                                             public void handle(ActionEvent event) {
                                                                                                                                                                 magnifyingGlassImgViw.setVisible(true);
-                                                                                                                                                                scaleTransition(1850.0, magnifyingGlassImgViw, 1.35,1.35,2,true);
+                                                                                                                                                                scaleTransition(1850.0, magnifyingGlassImgViw, 2.0,2.0,2,true);
 
 
 
@@ -320,10 +343,16 @@ public class VotingSimulation extends Movement {
                                                                                                                                                                             @Override
                                                                                                                                                                             public void handle(ActionEvent event) {
                                                                                                                                                                                 Text text = new Text("The End.");
-                                                                                                                                                                                textFlow.getChildren().addAll(text);
-                                                                                                                                                                                scaleTransition(3500.0, textFlow, 1.75,1.75,2,true );
+                                                                                                                                                                                textFlow.getChildren().setAll(text);
+//                                                                                                                                                                                scaleTransition(3500.0, textFlow, 1.75,1.75,2,true );
 
 
+                                                                                                                                                                            }
+                                                                                                                                                                        });
+                                                                                                                                                                            }
+                                                                                                                                                                        });
+                                                                                                                                                                            }
+                                                                                                                                                                        });
                                                                                                                                                                             }
                                                                                                                                                                         });
 
@@ -346,11 +375,11 @@ public class VotingSimulation extends Movement {
                                                                                                                     }
                                                                                                                 });
 
+                                                                                            }
+                                                                                        });
 
-                                                                                                            }
-                                                                                                        });
 
-                                                                                                    }
+                                                                                    }
                                                                                                 });
 
 

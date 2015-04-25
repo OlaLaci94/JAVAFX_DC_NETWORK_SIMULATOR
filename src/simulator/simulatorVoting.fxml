@@ -37,7 +37,7 @@
    <center>
       <StackPane fx:id="stackPane" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fx:id="dogImgViw" fitHeight="342.0" fitWidth="243.0" pickOnBounds="true" preserveRatio="true" visible="false" StackPane.alignment="CENTER_RIGHT">
+            <ImageView fx:id="dogImgViw" fitHeight="342.0" fitWidth="243.0" pickOnBounds="true" preserveRatio="true" visible="false" StackPane.alignment="BOTTOM_CENTER">
                <image>
                   <Image url="@../resources/dog.jpg" />
                </image>
@@ -71,10 +71,13 @@
                   <Insets left="20.0" top="20.0" />
                </StackPane.margin>
             </ImageView>
-            <ImageView fx:id="poolImgViw" fitHeight="351.0" fitWidth="555.0" pickOnBounds="true" preserveRatio="true" visible="false">
+            <ImageView fx:id="poolImgViw" fitHeight="351.0" fitWidth="555.0" pickOnBounds="true" preserveRatio="true" visible="false" StackPane.alignment="TOP_CENTER">
                <image>
                   <Image url="@../resources/pool.png" />
                </image>
+               <StackPane.margin>
+                  <Insets top="20.0" />
+               </StackPane.margin>
             </ImageView>
             <ImageView fx:id="messageImgViw" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" visible="false" StackPane.alignment="BOTTOM_RIGHT">
                <image>
@@ -110,7 +113,7 @@
                   <Insets bottom="20.0" />
                </StackPane.margin>
             </ImageView>
-            <ImageView fx:id="magnifyingGlassImgViw" fitHeight="150.0" fitWidth="200.0"  visible="false" pickOnBounds="true" preserveRatio="true" StackPane.alignment="BOTTOM_CENTER">
+            <ImageView fx:id="magnifyingGlassImgViw" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" visible="false" StackPane.alignment="BOTTOM_CENTER">
                <StackPane.margin>
                   <Insets bottom="20.0" />
                </StackPane.margin>
