@@ -64,93 +64,61 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/simulator/Main.java">
+      <file leaf-file-name="BasicIdeaSimulation.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/simulator/BasicIdeaSimulation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="731" max-vertical-offset="1428">
-              <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DiscoSimulation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/simulator/DiscoSimulation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="3298">
-              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="simulatorKeyExchange.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/simulator/simulatorKeyExchange.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.133333" vertical-offset="557" max-vertical-offset="1904">
-              <caret line="63" column="35" selection-start-line="63" selection-start-column="35" selection-end-line="63" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ControllerKeyExchange.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/simulator/ControllerKeyExchange.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="901" max-vertical-offset="1921">
-              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DiffieHelmanKeyExchange.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/simulator/DiffieHelmanKeyExchange.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="5712">
-              <caret line="42" column="51" selection-start-line="42" selection-start-column="51" selection-end-line="42" selection-end-column="51" />
+            <state vertical-scroll-proportion="10.963265" vertical-offset="0" max-vertical-offset="5508">
+              <caret line="316" column="0" selection-start-line="316" selection-start-column="0" selection-end-line="316" selection-end-column="0" />
               <folding>
-                <element signature="e#2310#15359#0" expanded="true" />
-                <element signature="e#3142#15333#0" expanded="true" />
-                <element signature="e#3477#15290#0" expanded="true" />
-                <element signature="e#3942#15247#0" expanded="true" />
-                <element signature="e#4448#15188#0" expanded="true" />
-                <element signature="e#4843#15129#0" expanded="true" />
-                <element signature="e#5807#15054#0" expanded="true" />
-                <element signature="e#6470#14963#0" expanded="true" />
-                <element signature="e#8259#14856#0" expanded="true" />
-                <element signature="e#9430#14732#0" expanded="true" />
-                <element signature="e#10152#14594#0" expanded="true" />
-                <element signature="e#10949#14439#0" expanded="true" />
-                <element signature="e#12253#14268#0" expanded="true" />
-                <element signature="e#13323#14081#0" expanded="true" />
-                <element signature="e#14080#14081#0" expanded="true" />
-                <element signature="e#14267#14268#0" expanded="true" />
-                <element signature="e#14438#14439#0" expanded="true" />
-                <element signature="e#14593#14594#0" expanded="true" />
-                <element signature="e#14731#14732#0" expanded="true" />
-                <element signature="e#14855#14856#0" expanded="true" />
-                <element signature="e#14962#14963#0" expanded="true" />
-                <element signature="e#15053#15054#0" expanded="true" />
-                <element signature="e#15128#15129#0" expanded="true" />
-                <element signature="e#15187#15188#0" expanded="true" />
-                <element signature="e#15246#15247#0" expanded="true" />
-                <element signature="e#15289#15290#0" expanded="true" />
-                <element signature="e#15332#15333#0" expanded="true" />
-                <element signature="e#15358#15359#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#2607#14183#0" expanded="true" />
+                <element signature="e#3262#14155#0" expanded="true" />
+                <element signature="e#3723#14111#0" expanded="true" />
+                <element signature="e#4530#14051#0" expanded="true" />
+                <element signature="e#5005#13992#0" expanded="true" />
+                <element signature="e#5540#13933#0" expanded="true" />
+                <element signature="e#6456#13842#0" expanded="true" />
+                <element signature="e#7571#13733#0" expanded="true" />
+                <element signature="e#8225#13610#0" expanded="true" />
+                <element signature="e#9110#13470#0" expanded="true" />
+                <element signature="e#10714#13315#0" expanded="true" />
+                <element signature="e#11469#13144#0" expanded="true" />
+                <element signature="e#12361#12957#0" expanded="true" />
+                <element signature="e#12956#12957#0" expanded="true" />
+                <element signature="e#13143#13144#0" expanded="true" />
+                <element signature="e#13314#13315#0" expanded="true" />
+                <element signature="e#13469#13470#0" expanded="true" />
+                <element signature="e#13609#13610#0" expanded="true" />
+                <element signature="e#13732#13733#0" expanded="true" />
+                <element signature="e#13841#13842#0" expanded="true" />
+                <element signature="e#13932#13933#0" expanded="true" />
+                <element signature="e#13991#13992#0" expanded="true" />
+                <element signature="e#14050#14051#0" expanded="true" />
+                <element signature="e#14110#14111#0" expanded="true" />
+                <element signature="e#14154#14155#0" expanded="true" />
+                <element signature="e#14182#14183#0" expanded="true" />
+                <element signature="e#14881#19128#0" expanded="true" />
+                <element signature="e#15562#19102#0" expanded="true" />
+                <element signature="e#15942#19060#0" expanded="true" />
+                <element signature="e#16779#19002#0" expanded="true" />
+                <element signature="e#17444#18928#0" expanded="true" />
+                <element signature="e#18364#18838#0" expanded="true" />
+                <element signature="e#18837#18838#0" expanded="true" />
+                <element signature="e#18927#18928#0" expanded="true" />
+                <element signature="e#19001#19002#0" expanded="true" />
+                <element signature="e#19059#19060#0" expanded="true" />
+                <element signature="e#19101#19102#0" expanded="true" />
+                <element signature="e#19127#19128#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BasicIdeaSimulation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/simulator/BasicIdeaSimulation.java">
+      <file leaf-file-name="ControllerThree.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/simulator/ControllerThree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5355">
-              <caret line="373" column="104" selection-start-line="373" selection-start-column="104" selection-end-line="373" selection-end-column="104" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1737" max-vertical-offset="2312">
+              <caret line="138" column="0" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -162,18 +130,8 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-43.633335" vertical-offset="0" max-vertical-offset="2193">
-              <caret line="77" column="48" selection-start-line="77" selection-start-column="48" selection-end-line="77" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ControllerThree.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/simulator/ControllerThree.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.8387755" vertical-offset="510" max-vertical-offset="2754">
-              <caret line="94" column="70" selection-start-line="94" selection-start-column="70" selection-end-line="94" selection-end-column="70" />
+            <state vertical-scroll-proportion="-4.5333333" vertical-offset="136" max-vertical-offset="2261">
+              <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -200,12 +158,9 @@
         <option value="$PROJECT_DIR$/src/simulator/ManyParticipantsAnimation.java" />
         <option value="$PROJECT_DIR$/src/simulator/simulatorArbitraryLength.fxml" />
         <option value="$PROJECT_DIR$/src/simulator/ControllerArbitraryLength.java" />
-        <option value="$PROJECT_DIR$/src/simulator/simulatorThreeLayout.fxml" />
-        <option value="$PROJECT_DIR$/src/simulator/ControllerThree.java" />
         <option value="$PROJECT_DIR$/src/simulator/ArbitraryLengthAnimation.java" />
         <option value="$PROJECT_DIR$/src/simulator/ControllerArbitraryAlphabet.java" />
         <option value="$PROJECT_DIR$/src/simulator/ArbitraryAlphabetAnimation.java" />
-        <option value="$PROJECT_DIR$/src/simulator/BasicIdeaSimulation.java" />
         <option value="$PROJECT_DIR$/src/simulator/simulatorArbitraryAlphabet.fxml" />
         <option value="$PROJECT_DIR$/src/simulator/simulatorDisco.fxml" />
         <option value="$PROJECT_DIR$/src/simulator/ControllerDisco.java" />
@@ -220,6 +175,9 @@
         <option value="$PROJECT_DIR$/src/simulator/VotingSimulation.java" />
         <option value="$PROJECT_DIR$/src/simulator/simulatorKeyExchange.fxml" />
         <option value="$PROJECT_DIR$/src/simulator/DiffieHelmanKeyExchange.java" />
+        <option value="$PROJECT_DIR$/src/simulator/ControllerThree.java" />
+        <option value="$PROJECT_DIR$/src/simulator/simulatorThreeLayout.fxml" />
+        <option value="$PROJECT_DIR$/src/simulator/BasicIdeaSimulation.java" />
       </list>
     </option>
   </component>
@@ -643,12 +601,12 @@
       <workItem from="1429603681203" duration="10352000" />
       <workItem from="1429629720630" duration="76666000" />
       <workItem from="1429879284026" duration="2107000" />
-      <workItem from="1429881414491" duration="30376000" />
+      <workItem from="1429881414491" duration="41439000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="218201000" />
+    <option name="totallyTimeSpent" value="229264000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="698" extended-state="6" />
@@ -1166,10 +1124,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/simulator/BasicIdeaSimulation.java">
+    <entry file="file://$PROJECT_DIR$/src/simulator/ControllerThree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5355">
-          <caret line="373" column="104" selection-start-line="373" selection-start-column="104" selection-end-line="373" selection-end-column="104" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1737" max-vertical-offset="2312">
+          <caret line="138" column="0" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1179,17 +1137,57 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-43.633335" vertical-offset="0" max-vertical-offset="2193">
-          <caret line="77" column="48" selection-start-line="77" selection-start-column="48" selection-end-line="77" selection-end-column="48" />
+        <state vertical-scroll-proportion="-4.5333333" vertical-offset="136" max-vertical-offset="2261">
+          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/simulator/ControllerThree.java">
+    <entry file="file://$PROJECT_DIR$/src/simulator/BasicIdeaSimulation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.8387755" vertical-offset="510" max-vertical-offset="2754">
-          <caret line="94" column="70" selection-start-line="94" selection-start-column="70" selection-end-line="94" selection-end-column="70" />
-          <folding />
+        <state vertical-scroll-proportion="10.963265" vertical-offset="0" max-vertical-offset="5508">
+          <caret line="316" column="0" selection-start-line="316" selection-start-column="0" selection-end-line="316" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2607#14183#0" expanded="true" />
+            <element signature="e#3262#14155#0" expanded="true" />
+            <element signature="e#3723#14111#0" expanded="true" />
+            <element signature="e#4530#14051#0" expanded="true" />
+            <element signature="e#5005#13992#0" expanded="true" />
+            <element signature="e#5540#13933#0" expanded="true" />
+            <element signature="e#6456#13842#0" expanded="true" />
+            <element signature="e#7571#13733#0" expanded="true" />
+            <element signature="e#8225#13610#0" expanded="true" />
+            <element signature="e#9110#13470#0" expanded="true" />
+            <element signature="e#10714#13315#0" expanded="true" />
+            <element signature="e#11469#13144#0" expanded="true" />
+            <element signature="e#12361#12957#0" expanded="true" />
+            <element signature="e#12956#12957#0" expanded="true" />
+            <element signature="e#13143#13144#0" expanded="true" />
+            <element signature="e#13314#13315#0" expanded="true" />
+            <element signature="e#13469#13470#0" expanded="true" />
+            <element signature="e#13609#13610#0" expanded="true" />
+            <element signature="e#13732#13733#0" expanded="true" />
+            <element signature="e#13841#13842#0" expanded="true" />
+            <element signature="e#13932#13933#0" expanded="true" />
+            <element signature="e#13991#13992#0" expanded="true" />
+            <element signature="e#14050#14051#0" expanded="true" />
+            <element signature="e#14110#14111#0" expanded="true" />
+            <element signature="e#14154#14155#0" expanded="true" />
+            <element signature="e#14182#14183#0" expanded="true" />
+            <element signature="e#14881#19128#0" expanded="true" />
+            <element signature="e#15562#19102#0" expanded="true" />
+            <element signature="e#15942#19060#0" expanded="true" />
+            <element signature="e#16779#19002#0" expanded="true" />
+            <element signature="e#17444#18928#0" expanded="true" />
+            <element signature="e#18364#18838#0" expanded="true" />
+            <element signature="e#18837#18838#0" expanded="true" />
+            <element signature="e#18927#18928#0" expanded="true" />
+            <element signature="e#19001#19002#0" expanded="true" />
+            <element signature="e#19059#19060#0" expanded="true" />
+            <element signature="e#19101#19102#0" expanded="true" />
+            <element signature="e#19127#19128#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
