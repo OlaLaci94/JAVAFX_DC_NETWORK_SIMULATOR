@@ -65,23 +65,18 @@ public class VotingSimulation extends Movement {
 
         tranArrList = new ArrayList<Transition>();
 
-
         Text t = new Text("This illustration will showcase how the dining cryptographer principle can be used in a boardroom voting scenario which satisfies " +
                 "several security requirements: perfect ballot secrecy, self- tallying, universal verifiability, fairness, allows each voter to vote exactly " +
                 "once, transcript withdrawal, technology independent and open source. ");
 
-//        t.setFill(Color.AQUA);
-//        Text tt = new Text("tfgyhujiko");
-//        tt.setFill(Color.CHOCOLATE);
         textFlow.getChildren().setAll(t);
 
-
-        part1();
+        simulation();
 
     }
 
 
-    public void part1(){
+    public void simulation(){
 
         scaleTransition(4500.0, textFlow, 2.0,2.0,2,true);
         scaleTransition.setOnFinished(new EventHandler<ActionEvent>() {

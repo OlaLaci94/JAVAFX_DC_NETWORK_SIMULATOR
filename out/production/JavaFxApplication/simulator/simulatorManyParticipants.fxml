@@ -1,200 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.image.*?>
-<?import java.lang.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="684.0" prefWidth="944.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="simulator.ControllerManyParticipants">
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="598.0" prefWidth="961.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="simulator.ControllerManyParticipants">
    <bottom>
-      <BorderPane prefHeight="69.0" prefWidth="944.0" BorderPane.alignment="CENTER">
+      <BorderPane prefHeight="70.0" prefWidth="961.0" BorderPane.alignment="CENTER">
          <center>
             <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-               <items>
-                  <Button fx:id="backSimulatorBtn" alignment="CENTER" cancelButton="true" contentDisplay="CENTER" mnemonicParsing="false" onAction="#cMPSimBack" text="Back" />
-                  <Button fx:id="pauseSimulatorBtn" mnemonicParsing="false" onAction="#cMPSimPause" text="Pause" />
-                  <Button fx:id="playSimulatorBtn" mnemonicParsing="false" onAction="#cMPSimPlay" text="Play">
-                     <opaqueInsets>
+              <items>
+                <Button fx:id="backSimulatorBtn" mnemonicParsing="false" onAction="#cMPSimBack" text="Back">
+                     <padding>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </opaqueInsets>
+                     </padding>
                   </Button>
-               </items>
+                  <Button fx:id="pauseSimulatorBtn" mnemonicParsing="false" onAction="#cMPSimPause" text="Pause">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="playSimulatorBtn" mnemonicParsing="false" onAction="#cMPSimPlay" text="Play">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </Button>
+              </items>
             </ToolBar>
          </center>
       </BorderPane>
    </bottom>
    <center>
-      <StackPane fx:id="stackPane" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="BOTTOM_CENTER">
+      <StackPane fx:id="stackPane" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fx:id="squirrelImgViw" fitHeight="268.0" fitWidth="204.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_LEFT">
-               <image>
-                  <Image url="@../resources/squirrel.png" />
-               </image>
-               <StackPane.margin>
-                  <Insets left="150.0" top="30.0" />
-               </StackPane.margin>
-            </ImageView>
-            <ImageView fx:id="dogImgViw" fitHeight="335.0" fitWidth="344.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_LEFT">
+            <ImageView fx:id="dogImgViw" fitHeight="342.0" fitWidth="243.0" pickOnBounds="true" preserveRatio="true" visible="false" StackPane.alignment="TOP_CENTER">
                <image>
                   <Image url="@../resources/dog.jpg" />
                </image>
                <StackPane.margin>
-                  <Insets left="30.0" top="30.0" />
+                  <Insets top="20.0" />
                </StackPane.margin>
             </ImageView>
-            <HBox fx:id="elephantVector" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="720.0" visible="false" StackPane.alignment="BOTTOM_CENTER">
-               <children>
-                  <TextArea fx:id="elephantVector2" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                  <TextArea fx:id="elephantVector4" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                  <TextArea fx:id="elephantVector3" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                  <TextArea fx:id="elephantVector5" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                  <TextArea fx:id="elephantVector1" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                  <TextArea fx:id="elephantVector6" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                    </children>
+            <ImageView fx:id="sharedKeyImgViw" fitHeight="222.0" fitWidth="251.0" pickOnBounds="true" preserveRatio="true" visible="false" StackPane.alignment="TOP_CENTER">
+               <image>
+                  <Image url="@../resources/sharedKey.png" />
+               </image>
                <StackPane.margin>
-                  <Insets bottom="50.0" left="50.0" />
+                  <Insets left="20.0" top="20.0" />
                </StackPane.margin>
-            </HBox>
-            <HBox fx:id="reservationVector" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="720.0" visible="false" StackPane.alignment="TOP_CENTER">
+            </ImageView>
+            <ImageView fx:id="poolImgViw" fitHeight="351.0" fitWidth="555.0" pickOnBounds="true" preserveRatio="true" visible="false" StackPane.alignment="TOP_CENTER">
+               <image>
+                  <Image url="@../resources/pool.png" />
+               </image>
+               <StackPane.margin>
+                  <Insets top="20.0" />
+               </StackPane.margin>
+            </ImageView>
+            <HBox fx:id="signatureVector" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="113.0" prefWidth="1400.0" visible="false" StackPane.alignment="BOTTOM_CENTER">
                <children>
-                  <TextArea fx:id="reservationVector2" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                  <TextArea fx:id="reservationVector3" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                  <TextArea fx:id="reservationVector4" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                  <TextArea fx:id="reservationVector5" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                  <TextArea fx:id="reservationVector6" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                  <TextArea fx:id="reservationVector7" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                  <TextArea fx:id="reservationVector1" prefHeight="80.0" prefWidth="75.0" wrapText="true" />
+                  <TextArea fx:id="signatureVector1" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="300.0" text="key(dog,cat)" visible="false" />
+                  <TextArea fx:id="signatureVector2" editable="false" layoutX="210.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="300.0" text="key(dog,rabbit)" visible="false" />
+                  <TextArea fx:id="signatureVector3" editable="false" layoutX="360.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="300.0" text="key(dog,mouse)" visible="false" />
+                  <TextArea fx:id="signatureVector4" editable="false" layoutX="310.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="300.0" text="key(dog,pig)" visible="false" />
+                  <TextArea fx:id="signatureVector5" editable="false" layoutX="460.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="300.0" text="key(dog,snake)" visible="false" />
+                  <TextArea fx:id="signatureVector6" editable="false" layoutX="610.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="300.0" text="key(dog,fish)" visible="false" />
                </children>
                <StackPane.margin>
-                  <Insets left="50.0" top="30.0" />
+                  <Insets bottom="20.0" />
                </StackPane.margin>
             </HBox>
-            <HBox fx:id="cryptographerVector" layoutX="60.0" layoutY="268.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="136.0" prefWidth="745.0" visible="false" StackPane.alignment="TOP_RIGHT">
-               <children>
-                  <TextArea fx:id="cryptographerVector1" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                  <TextArea fx:id="cryptographerVector2" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                  <TextArea fx:id="cryptographerVector3" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                  <TextArea fx:id="cryptographerVector4" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                  <TextArea fx:id="cryptographerVector5" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                  <TextArea fx:id="cryptographerVector6" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                   </children>
+            <TextFlow fx:id="textFlow" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="334.0" prefWidth="569.0" StackPane.alignment="BOTTOM_CENTER">
                <StackPane.margin>
-                  <Insets right="50.0" top="80.0" />
-               </StackPane.margin>
-            </HBox>
-            <HBox fx:id="cryptographer2Vector" layoutX="209.0" layoutY="268.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="127.0" prefWidth="769.0" visible="false" StackPane.alignment="CENTER">
-               <children>
-                  <TextArea fx:id="cryptographer2Vector1" prefHeight="80.0" prefWidth="75.0" wrapText="true" />
-                  <TextArea fx:id="cryptographer2Vector2" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                  <TextArea fx:id="cryptographer2Vector3" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                  <TextArea fx:id="cryptographer2Vector4" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                  <TextArea fx:id="cryptographer2Vector5" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                  <TextArea fx:id="cryptographer2Vector6" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                 </children>
-            </HBox>
-            <HBox fx:id="cryptographer3Vector" layoutX="209.0" layoutY="525.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="123.0" prefWidth="758.0" visible="false" StackPane.alignment="CENTER_LEFT">
-               <children>
-                  <TextArea fx:id="cryptographer3Vector1" prefHeight="80.0" prefWidth="75.0" wrapText="true" />
-                  <TextArea fx:id="cryptographer3Vector2" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                  <TextArea fx:id="cryptographer3Vector3" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                  <TextArea fx:id="cryptographer3Vector4" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                  <TextArea fx:id="cryptographer3Vector5" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                  <TextArea fx:id="cryptographer3Vector6" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                   </children>
-               <StackPane.margin>
-                  <Insets bottom="100.0" left="50.0" />
-               </StackPane.margin>
-            </HBox>
-            <VBox fx:id="cryptographer4Vector" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="597.0" prefWidth="684.0" visible="false" StackPane.alignment="CENTER_LEFT">
-               <children>
-                  <TextArea fx:id="cryptographer4Vector1" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="75.0" prefWidth="80.0" wrapText="true" />
-                  <TextArea fx:id="cryptographer4Vector2" editable="false" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                  <TextArea fx:id="cryptographer4Vector3" editable="false" layoutX="10.0" layoutY="85.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                  <TextArea fx:id="cryptographer4Vector4" editable="false" layoutX="10.0" layoutY="160.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                  <TextArea fx:id="cryptographer4Vector5" editable="false" layoutX="10.0" layoutY="235.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                  <TextArea fx:id="cryptographer4Vector6" editable="false" layoutX="10.0" layoutY="310.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                   </children>
-            </VBox>
-            <VBox fx:id="cryptographer5Vector" layoutX="10.0" layoutY="45.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="532.0" prefWidth="789.0" visible="false" StackPane.alignment="CENTER_RIGHT">
-               <children>
-                  <TextArea fx:id="cryptographer5Vector1" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="75.0" prefWidth="80.0" wrapText="true" />
-                  <TextArea fx:id="cryptographer5Vector2" editable="false" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                  <TextArea fx:id="cryptographer5Vector3" editable="false" layoutX="10.0" layoutY="85.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                  <TextArea fx:id="cryptographer5Vector4" editable="false" layoutX="10.0" layoutY="160.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                  <TextArea fx:id="cryptographer5Vector5" editable="false" layoutX="10.0" layoutY="235.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                  <TextArea fx:id="cryptographer5Vector6" editable="false" layoutX="10.0" layoutY="310.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                  </children>
-            </VBox>
-            <VBox fx:id="cryptographer6Vector" layoutX="854.0" layoutY="45.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="488.0" prefWidth="821.0" visible="false" StackPane.alignment="BOTTOM_CENTER">
-               <children>
-                  <TextArea fx:id="cryptographer6Vector1" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="75.0" prefWidth="80.0" wrapText="true" />
-                  <TextArea fx:id="cryptographer6Vector2" editable="false" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                  <TextArea fx:id="cryptographer6Vector3" editable="false" layoutX="10.0" layoutY="85.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                  <TextArea fx:id="cryptographer6Vector4" editable="false" layoutX="10.0" layoutY="160.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                  <TextArea fx:id="cryptographer6Vector5" editable="false" layoutX="10.0" layoutY="235.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                  <TextArea fx:id="cryptographer6Vector6" editable="false" layoutX="10.0" layoutY="310.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="120.0" wrapText="true" />
-                  </children>
-            </VBox>
-            <ImageView fx:id="elephantImgViw" fitHeight="250.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="BOTTOM_LEFT">
+                  <Insets />
+               </StackPane.margin></TextFlow>
+            <ImageView fx:id="roundKeyImgViw" fitHeight="245.0" fitWidth="156.0" pickOnBounds="true" preserveRatio="true" visible="false" StackPane.alignment="BOTTOM_LEFT">
                <image>
-                  <Image url="@../resources/elephant.png" />
+                  <Image url="@../resources/roundKeys.png" />
                </image>
                <StackPane.margin>
-                  <Insets bottom="30.0" left="40.0" right="10.0" top="10.0" />
+                  <Insets bottom="20.0" left="20.0" />
                </StackPane.margin>
             </ImageView>
-            <ImageView fx:id="snakeImgViw" fitHeight="250.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="BOTTOM_RIGHT">
+            <ImageView fx:id="poolImgViw1" fitHeight="351.0" fitWidth="555.0" pickOnBounds="true" preserveRatio="true" visible="false" StackPane.alignment="TOP_CENTER">
                <image>
-                  <Image url="@../resources/snake.png" />
+                  <Image url="@../resources/pool.png" />
                </image>
                <StackPane.margin>
-                  <Insets bottom="30.0" left="10.0" right="40.0" top="10.0" />
+                  <Insets top="20.0" />
                </StackPane.margin>
             </ImageView>
-            <ImageView fx:id="crocodileImgViw" fitHeight="308.0" fitWidth="352.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_CENTER">
-               <image>
-                  <Image url="@../resources/crocodile.png" />
-               </image>
-               <StackPane.margin>
-                  <Insets top="30.0" />
-               </StackPane.margin>
-            </ImageView>
-            <ImageView fx:id="penguinImgViw" fitHeight="313.0" fitWidth="354.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_RIGHT">
-               <image>
-                  <Image url="@../resources/penguin.png" />
-               </image>
-               <StackPane.margin>
-                  <Insets right="30.0" top="30.0" />
-               </StackPane.margin>
-            </ImageView>
-            <ImageView fx:id="pandaImgViw" fitHeight="323.0" fitWidth="275.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_CENTER">
-               <image>
-                  <Image url="@../resources/panda.png" />
-               </image>
-               <StackPane.margin>
-                  <Insets right="400.0" top="30.0" />
-               </StackPane.margin>
-            </ImageView>
-            <ImageView fx:id="chickenImgViw" fitHeight="318.0" fitWidth="293.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_CENTER">
-               <image>
-                  <Image url="@../resources/chicken.png" />
-               </image>
-               <StackPane.margin>
-                  <Insets left="400.0" top="30.0" />
-               </StackPane.margin>
-            </ImageView>
-            <TextArea fx:id="mPTextArea" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="271.0" prefWidth="508.0" wrapText="true" StackPane.alignment="CENTER">
-               <StackPane.margin>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="50.0" />
-               </StackPane.margin>
-            </TextArea>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
          </children>
-         <BorderPane.margin>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-         </BorderPane.margin>
       </StackPane>
    </center>
 </BorderPane>

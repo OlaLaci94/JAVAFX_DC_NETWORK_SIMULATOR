@@ -14,7 +14,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 /**
- * Created by Ola Laci on 21/04/2015.
+ *  Controller class for simulatorKeyExchange.fxml and link to DiffieHellmanKeyExchange
  */
 public class ControllerKeyExchange implements ControlTemp, Initializable, Runnable
 {
@@ -32,13 +32,13 @@ public class ControllerKeyExchange implements ControlTemp, Initializable, Runnab
     private StackPane stackPane;
 
 
-
-
-
-
+    /**
+     * Method of Initializable and passes in the widgets from the fxml file while checking they are injected correctly.
+     * @param fxmlFileLocation
+     * @param resources
+     */
     public void initialize(URL fxmlFileLocation, ResourceBundle resources)
     {
-        // initialize your logic here: all @FXML variables will have been injected
         assert backSimulatorBtn != null : "fx:id=\"backSimulatorBtn\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
         assert pauseSimulatorBtn != null : "fx:id=\"pauseSimulatorBtn\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
         assert playSimulatorBtn != null : "fx:id=\"playSimulatorBtn\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
@@ -56,6 +56,9 @@ public class ControllerKeyExchange implements ControlTemp, Initializable, Runnab
 
     }
 
+    /**
+     * Creates a DiffieHellmanKeyExchange object to run the animations
+     */
     public void run(){
 
         dhKeyExchange = new DiffieHelmanKeyExchange(backSimulatorBtn, playSimulatorBtn,pauseSimulatorBtn, textFlow, dogImgViw,
@@ -65,6 +68,9 @@ public class ControllerKeyExchange implements ControlTemp, Initializable, Runnab
 
     }
 
+    /**
+     * Eventhandler of the backSimulatorBtn
+     */
     public void backKey()
     {
         for(int i = 0; i<dhKeyExchange.tranArrList.size(); i++){
@@ -76,6 +82,9 @@ public class ControllerKeyExchange implements ControlTemp, Initializable, Runnab
         screenController.setScreen(Main.mainScreenID);
     }
 
+    /**
+     * Eventhandler of the pauseSimulatorBtn
+     */
     public void pauseKey(){
         for(Transition tran: dhKeyExchange.tranArrList){
 
@@ -90,6 +99,9 @@ public class ControllerKeyExchange implements ControlTemp, Initializable, Runnab
         playSimulatorBtn.setDisable(false);
     }
 
+    /**
+     * Eventhandler of the playSimulatorBtn
+     */
     public void playKey(){
         for(Transition tran: dhKeyExchange.tranArrList){
 

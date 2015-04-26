@@ -10,15 +10,14 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.TextFlow;
-import javafx.scene.web.WebView;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 /**
- * Created by Ola Laci on 23/04/2015.
+ * Controller class for simulatorVoting.fxml
  */
-public class ControllerVoting implements ControlTemp, Initializable, Runnable{
+public class ControllerVoting implements ControlTemp, Initializable, Runnable {
 
 
     ScreenController screenController;
@@ -29,18 +28,22 @@ public class ControllerVoting implements ControlTemp, Initializable, Runnable{
     @FXML
     private StackPane stackPane;
     @FXML
-    private ImageView snakeImgViw, dogImgViw, magnifyingGlassImgViw,commitmentImgViw, privateKeyImgViw, publicKeyImgViw, roundKeyImgViw, poolImgViw, messageImgViw, elephantImgViw, sharedKeyImgViw;
+    private ImageView snakeImgViw, dogImgViw, magnifyingGlassImgViw, commitmentImgViw, privateKeyImgViw, publicKeyImgViw, roundKeyImgViw, poolImgViw, messageImgViw, elephantImgViw, sharedKeyImgViw;
     @FXML
-    private TextArea  signatureVector1,signatureVector2,signatureVector3,signatureVector4,signatureVector5,signatureVector6, signatureVector7;
+    private TextArea signatureVector1, signatureVector2, signatureVector3, signatureVector4, signatureVector5, signatureVector6, signatureVector7;
     @FXML
     private HBox signatureVector;
     @FXML
     private TextFlow textFlow;
 
+    /**
+     * Method of Initializable and passes in the widgets from the fxml file while checking they are injected correctly.
+     *
+     * @param fxmlFileLocation
+     * @param resources
+     */
+    public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
 
-    public void initialize(URL fxmlFileLocation, ResourceBundle resources){
-
-        // initialize your logic here: all @FXML variables will have been injected
         assert backSimulatorBtn != null : "fx:id=\"backSimulatorBtn\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
         assert pauseSimulatorBtn != null : "fx:id=\"pauseSimulatorBtn\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
         assert playSimulatorBtn != null : "fx:id=\"playSimulatorBtn\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
@@ -65,26 +68,26 @@ public class ControllerVoting implements ControlTemp, Initializable, Runnable{
         assert commitmentImgViw != null : "fx:id=\"commitmentImgViw\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
         assert magnifyingGlassImgViw != null : "fx:id=\"magnifyingGlassImgViw\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
 
-
-
-
     }
 
-
-    public void run(){
+    /**
+     *  Creates a VotingSimulation object to run the animations
+     */
+    public void run() {
 
         votingSimulation = new VotingSimulation(backSimulatorBtn, pauseSimulatorBtn, playSimulatorBtn, stackPane,
                 snakeImgViw, dogImgViw, privateKeyImgViw, publicKeyImgViw, roundKeyImgViw, poolImgViw, messageImgViw, elephantImgViw,
-                textFlow, signatureVector1,signatureVector2,signatureVector3,signatureVector4,signatureVector5,signatureVector6,
+                textFlow, signatureVector1, signatureVector2, signatureVector3, signatureVector4, signatureVector5, signatureVector6,
                 signatureVector, sharedKeyImgViw, signatureVector7, commitmentImgViw, magnifyingGlassImgViw);
         playSimulatorBtn.setDisable(true);
 
-
     }
 
-    public void vSimBack()
-    {
-        for(int i = 0; i<votingSimulation.tranArrList.size(); i++){
+    /**
+     *  Eventhandler for backSimulatorBtn
+     */
+    public void vSimBack() {
+        for (int i = 0; i < votingSimulation.tranArrList.size(); i++) {
 
             Transition transition = votingSimulation.tranArrList.get(i);
             transition.stop();
@@ -93,49 +96,45 @@ public class ControllerVoting implements ControlTemp, Initializable, Runnable{
         screenController.setScreen(Main.mainScreenID);
     }
 
-    public void vSimPause()
-    {
-        for(Transition tran: votingSimulation.tranArrList){
+    /**
+     *  Eventhandler for pauseSimulatorBtn
+     */
+    public void vSimPause() {
+        for (Transition tran : votingSimulation.tranArrList) {
 
-            if( tran.getStatus().equals(Animation.Status.RUNNING)){
+            if (tran.getStatus().equals(Animation.Status.RUNNING)) {
                 tran.pause();
-            }
-            else{
-                System.out.println(tran.toString()+ "not");
+            } else {
+                System.out.println(tran.toString() + "not");
             }
         }
         playSimulatorBtn.setDisable(false);
     }
 
-    public void vSimPlay()
-    {
-        for(Transition tran: votingSimulation.tranArrList){
+    /**
+     *  Eventhandler for playSimulatorBtn
+     */
+    public void vSimPlay() {
+        for (Transition tran : votingSimulation.tranArrList) {
 
-            if( tran.getStatus().equals(Animation.Status.PAUSED)){
+            if (tran.getStatus().equals(Animation.Status.PAUSED)) {
                 tran.play();
-            }
-            else{
-                System.out.println(tran.toString()+ "not");
+            } else {
+                System.out.println(tran.toString() + "not");
             }
         }
         playSimulatorBtn.setDisable(true);
     }
 
 
-
     /**
-     *  Implementation of ControlTemp interface
+     * Implementation of ControlTemp interface
+     *
      * @param screensController
      */
-    public void setControlParent(ScreenController screensController)
-    {
+    public void setControlParent(ScreenController screensController) {
         screenController = screensController;
 
     }
-
-
-
-
-
 
 }

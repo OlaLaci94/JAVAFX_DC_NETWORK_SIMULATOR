@@ -9,6 +9,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.scene.text.TextFlow;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -26,11 +27,13 @@ public class ControllerArbitraryAlphabet implements ControlTemp, Initializable, 
     @FXML
     private StackPane stackPane;
     @FXML
-    private ImageView snakeImgViw, elephantImgViw, keyImgViw,keyImgViw1, poolImgViw, alphaImgViw;
+    private ImageView snakeImgViw, elephantImgViw, keyImgViw,keyImgViw1, poolImgViw, alphaImgViw, mapImgVw, mathImgViw;
     @FXML
-    private TextArea textArea, partialPad1,partialPad2,partialPad3,partialPad4,partialPad5,partialPad6;
+    private TextArea partialPad1,partialPad2,partialPad3,partialPad4,partialPad5,partialPad6;
     @FXML
     private HBox vector;
+    @FXML
+    private TextFlow textflow;
 
     public void initialize(URL fxmlFileLocation, ResourceBundle resources){
 
@@ -42,7 +45,6 @@ public class ControllerArbitraryAlphabet implements ControlTemp, Initializable, 
         assert snakeImgViw != null : "fx:id=\"snakeImgViw\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
         assert poolImgViw != null : "fx:id=\"poolImgViw\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
         assert elephantImgViw != null : "fx:id=\"elephantImgViw\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
-        assert textArea != null : "fx:id=\"textArea\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
         assert keyImgViw != null : "fx:id=\"keyImgViw\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
         assert keyImgViw1 != null : "fx:id=\"keyImgViw1\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
         assert vector != null : "fx:id=\"vector\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
@@ -53,6 +55,12 @@ public class ControllerArbitraryAlphabet implements ControlTemp, Initializable, 
         assert partialPad5 != null : "fx:id=\"partialPad5\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
         assert partialPad6 != null : "fx:id=\"partialPad6\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
         assert alphaImgViw != null : "fx:id=\"alphaImgViw\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
+        assert textflow != null : "fx:id=\"textflow\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
+        assert mapImgVw != null : "fx:id=\"mapImgVw\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
+        assert mathImgViw != null : "fx:id=\"mathImgViw\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
+
+
+
 
 
     }
@@ -61,8 +69,8 @@ public class ControllerArbitraryAlphabet implements ControlTemp, Initializable, 
     public void run()
     {
         arbitraryAlphabetAnimation = new ArbitraryAlphabetAnimation( backSimulatorBtn,  pauseSimulatorBtn,  playSimulatorBtn,  stackPane,
-                alphaImgViw, poolImgViw, snakeImgViw,  elephantImgViw,  keyImgViw,  keyImgViw1,  textArea, partialPad1,  partialPad2,  partialPad3,  partialPad4,
-                 partialPad5, partialPad6, vector);
+                 poolImgViw, snakeImgViw,  elephantImgViw,  keyImgViw,  keyImgViw1,  textflow, partialPad1,  partialPad2,  partialPad3,  partialPad4,
+                 partialPad5, partialPad6, vector, mapImgVw, alphaImgViw, mathImgViw);
 
         playSimulatorBtn.setDisable(true);
     }

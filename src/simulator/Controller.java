@@ -1,27 +1,20 @@
 package simulator;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
-import javafx.scene.control.cell.ComboBoxListCell;
-
-import javax.swing.*;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 /**
- *  Controller class for MainLayout.fxml. Handles all logic of this specific screen
+ *  Controller class for MainLayout.fxml
  */
 public class Controller implements ControlTemp, Initializable
 {
     ScreenController screenController;
-    int number;
     ObservableList<String> options;
 
     @FXML
@@ -69,7 +62,7 @@ public class Controller implements ControlTemp, Initializable
                 "Basic Protocol", " Diffie Hellman Key Exchange", "Many Participants", "Arbitrary Alphabet", "Arbitrary Message Length and Disco Problem", "Voting");
 
         listview.setItems(options);
-
+        listview.getSelectionModel().select(0);
 
 
 
@@ -77,7 +70,7 @@ public class Controller implements ControlTemp, Initializable
 
 
     /**
-     *  Checks the value of number -- numOfCrypSlider user input-- and sets the screen according to the input
+     *  Checks the value of number -- listview selected item-- and sets the screen according to the input
      */
     public void switchScenario()
     {

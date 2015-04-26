@@ -1,11 +1,15 @@
 package simulator;
 
 /**
- * Created by Ola Laci on 15/04/2015.
+ *
  */
 public interface ControlTemp {
 
-    //allow injection of Parent ScreenPane
+
+    /**
+     * allow inject of Parent ScreenPane
+     * @param screensController
+     */
         public void setControlParent(ScreenController screensController);
 
 }

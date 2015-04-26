@@ -20,18 +20,15 @@ public class ControllerDisco implements ControlTemp, Initializable, Runnable{
 
     ScreenController screenController;
     DiscoSimulation discoSimulation;
+
     @FXML
-    private Button backSimulatorBtn;
-    @FXML
-    private Button  pauseSimulatorBtn, playSimulatorBtn;
+    private Button  pauseSimulatorBtn, playSimulatorBtn, backSimulatorBtn;
     @FXML
     private HBox signatureVector;
     @FXML
     private StackPane stackPane;
     @FXML
-    private ImageView snakeImgViw, messageImgViw;
-    @FXML
-    private ImageView elephantImgViw, clawImgViw, treeImgViw, hImgViw, thetaImgViw;
+    private ImageView elephantImgViw, clawImgViw, treeImgViw, hImgViw, thetaImgViw, snakeImgViw, messageImgViw;
     @FXML
     private TextArea textArea, signatureVector1, signatureVector2,signatureVector3,signatureVector4,signatureVector5,signatureVector6;
 

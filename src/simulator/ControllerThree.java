@@ -32,14 +32,7 @@ public class ControllerThree implements ControlTemp, Initializable, Runnable
     private TextFlow textFlow;
 
 
-    /**
-     *  Implementation of ControlTemp interface
-     * @param screensController
-     */
-    public void setControlParent(ScreenController screensController)
-    {
-        this.controller = screensController;
-    }
+
     /**
      *  Implementation of Initializable interface-- connects widgets to their fxml file and adds some listeners for those widgets
      *
@@ -49,8 +42,6 @@ public class ControllerThree implements ControlTemp, Initializable, Runnable
     @FXML
     public void initialize(URL fxmlFileLocation, ResourceBundle resources){
 
-
-        // initialize your logic here: all @FXML variables will have been injected
         assert threeSimPauseBtn != null : "fx:id=\"threeSimPauseBtn\" was not injected: check your FXML file 'simulatorThreeLayout.fxml'.";
         assert snakeCryptographer != null : "fx:id=\"snakeCryptographer\" was not injected: check your FXML file 'simulatorThreeLayout.fxml'.";
         assert threeSimBackBtn != null : "fx:id=\"threeSimBackBtn\" was not injected: check your FXML file 'simulatorThreeLayout.fxml'.";
@@ -65,14 +56,11 @@ public class ControllerThree implements ControlTemp, Initializable, Runnable
         assert snakeSpeechBubbleSame != null : "fx:id=\"snakeSpeechBubbleSame\" was not injected: check your FXML file 'simulatorThreeLayout.fxml'.";
         assert snakeSpeechBubbleDifferent != null : "fx:id=\"snakeSpeechBubbleDifferent\" was not injected: check your FXML file 'simulatorThreeLayout.fxml'.";
         assert coinTailsImgViw != null : "fx:id=\"coinTailsImgViw\" was not injected: check your FXML file 'simulatorThreeLayout.fxml'.";
-
-
-
-
     }
 
-
-
+    /**
+     *  Creates a BasicIdeaSimulation object to run the animation
+     */
     public void run(){
 
         basicIdeaSimulation = new BasicIdeaSimulation(coinTailsImgViw,
@@ -97,9 +85,7 @@ public class ControllerThree implements ControlTemp, Initializable, Runnable
             transition.stop();
         }
         basicIdeaSimulation.tranArrList.clear();
-
         controller.setScreen(Main.mainScreenID);
-
     }
 
     /**
@@ -116,18 +102,19 @@ public class ControllerThree implements ControlTemp, Initializable, Runnable
                System.out.println(tran.toString()+ "not");
            }
         }
-
         threeSimPlayBtn.setDisable(false);
-
     }
+
+
+
 
     /**
      *  Eventhandler of threeSimPlayBtn
      */
     public void threeSimPlay(){
 
-        for(Transition tran: basicIdeaSimulation.tranArrList){
-
+        for(Transition tran: basicIdeaSimulation.tranArrList)
+        {
             if( tran.getStatus().equals(Animation.Status.PAUSED)){
                 tran.play();
             }
@@ -137,7 +124,15 @@ public class ControllerThree implements ControlTemp, Initializable, Runnable
         }
         threeSimPlayBtn.setDisable(true);
 
-
-
     }
+
+    /**
+     *  Implementation of ControlTemp interface
+     * @param screensController
+     */
+    public void setControlParent(ScreenController screensController)
+    {
+        this.controller = screensController;
+    }
+
 }

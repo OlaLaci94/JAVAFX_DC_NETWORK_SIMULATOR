@@ -54,8 +54,8 @@ public class DiffieHelmanKeyExchange extends Movement{
 
         Text text = new Text("A public key algorithm that allows two participants to establish a shared secret key - illustrated in the Dining " +
                 "Cryptographers protocol as the coin toss.");
-//        text.fontProperty().setValue(Font.font(30.0));
-        textFlow.getChildren().setAll(text);
+
+         textFlow.getChildren().setAll(text);
         scaleTransition(2750.0, textFlow, 1.5,1.5,2,true);
 
         scaleTransition.setOnFinished(new EventHandler<ActionEvent>() {
