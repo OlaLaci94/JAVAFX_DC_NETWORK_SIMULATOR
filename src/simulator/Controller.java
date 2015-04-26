@@ -59,7 +59,7 @@ public class Controller implements ControlTemp, Initializable
 //        assert listView != null : "fx:id=\"listView\" was not injected: check your FXML file 'MainLayout.fxml'.";
 
         options = FXCollections.observableArrayList(
-                "Basic Protocol", " Diffie Hellman Key Exchange", "Many Participants", "Arbitrary Alphabet", "Arbitrary Message Length and Disco Problem", "Voting");
+                "Basic Protocol", " Diffie Hellman Key Exchange", "XOR Function", "Many Participants", "Arbitrary Alphabet", "Arbitrary Message Length and Disco Problem", "Voting");
 
         listview.setItems(options);
         listview.getSelectionModel().select(0);
@@ -92,24 +92,30 @@ public class Controller implements ControlTemp, Initializable
                    screenController.setScreen(Main.keyExchangeScreenID);
                    break;
             case 2:
+                screenController.loadScreen(Main.binaryScreenID, Main.binaryScreenFile);
+                Thread binaryThrd = new Thread(screenController.controllerBinary);
+                binaryThrd.start();
+                screenController.setScreen(Main.binaryScreenID);
+                break;
+            case 3:
                 screenController.loadScreen(Main.manyParticipantsScreenID, Main.manyParticipantsScreenFile);
                 Thread manyParticipantsThrd = new Thread(screenController.controllerManyParticipants);
                 manyParticipantsThrd.start();
                 screenController.setScreen(Main.manyParticipantsScreenID);
                 break;
-            case 3:
+            case 4:
                 screenController.loadScreen(Main.arbitraryAlphabetScreenID, Main.arbitraryAlphabetScreenFile);
                 Thread arbitraryAlphabetThrd = new Thread(screenController.controllerArbitraryAlphabet);
                 arbitraryAlphabetThrd.start();
                 screenController.setScreen(Main.arbitraryAlphabetScreenID);
                 break;
-            case 4:
+            case 5:
                 screenController.loadScreen(Main.discoScreenID, Main.discoScreenFile);
                 Thread discoThrd = new Thread(screenController.controllerDisco);
                 discoThrd.start();
                 screenController.setScreen(Main.discoScreenID);
                 break;
-            case 5:
+            case 6:
                 screenController.loadScreen(Main.votingScreenID, Main.votingScreenFile);
                 Thread votingThrd = new Thread(screenController.controllerVoting);
                 votingThrd.start();

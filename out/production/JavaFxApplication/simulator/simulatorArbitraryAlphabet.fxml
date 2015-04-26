@@ -73,7 +73,7 @@
                    <TextArea fx:id="partialPad6" editable="false" layoutX="610.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="300.0" text="W(snake,cat)(6)" visible="false" />
                </children>
             </HBox>
-            <ImageView fx:id="poolImgViw" fitHeight="265.0" fitWidth="498.0" pickOnBounds="true" preserveRatio="true" visible="false" StackPane.alignment="TOP_CENTER">
+            <ImageView fx:id="poolImgViw" fitHeight="314.0" fitWidth="505.0" pickOnBounds="true" preserveRatio="true" visible="false" StackPane.alignment="TOP_CENTER">
                <image>
                   <Image url="@../resources/pool.png" />
                </image>
@@ -103,7 +103,7 @@
                   <Insets left="20.0" />
                </StackPane.margin>
             </ImageView>
-            <ImageView fx:id="mathImgViw" fitHeight="254.0" fitWidth="698.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER">
+            <ImageView fx:id="mathImgViw" fitHeight="299.0" fitWidth="761.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER">
                <image>
                   <Image url="@../resources/math.png" />
                </image>

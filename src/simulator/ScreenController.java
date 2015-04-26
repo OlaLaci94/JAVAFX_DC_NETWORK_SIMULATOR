@@ -27,10 +27,11 @@ public class ScreenController extends StackPane
     private HashMap<String, Node> screenMap;
     ControllerThree controllerThree;
     ControllerKeyExchange controllerKeyExchange;
+    ControllerBinary controllerBinary;
     ControllerManyParticipants controllerManyParticipants;
     ControlTemp myControllerTemp;
     ControllerArbitraryAlphabet controllerArbitraryAlphabet;
-     ControllerDisco controllerDisco;
+    ControllerDisco controllerDisco;
     ControllerVoting controllerVoting;
 
     /**
@@ -79,7 +80,11 @@ public class ScreenController extends StackPane
                 controllerKeyExchange = (ControllerKeyExchange) fxmlLoader.getController();
 
             }
+            else if(resource.equals(Main.binaryScreenFile))
+            {
+                controllerBinary = (ControllerBinary) fxmlLoader.getController();
 
+            }
             else if(resource.equals(Main.manyParticipantsScreenFile)){
                 controllerManyParticipants = (ControllerManyParticipants) fxmlLoader.getController();
             }

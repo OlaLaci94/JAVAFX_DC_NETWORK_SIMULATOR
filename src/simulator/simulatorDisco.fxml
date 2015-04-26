@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.image.*?>
@@ -51,7 +52,6 @@
                         <Insets right="40.0" />
                     </StackPane.margin>
                 </ImageView>
-                <TextArea fx:id="textArea" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="295.0" prefWidth="513.0" wrapText="true" />
                 <HBox fx:id="signatureVector" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="900.0" visible="false" StackPane.alignment="BOTTOM_CENTER">
                     <children>
                         <TextArea fx:id="signatureVector1" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="250.0" text="S(1)" visible="false" />
@@ -105,6 +105,20 @@
                         <Insets left="30.0" />
                     </StackPane.margin>
                 </ImageView>
+            <TextFlow fx:id="textFlow" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="300.0" prefWidth="650.0" StackPane.alignment="BOTTOM_CENTER">
+               <StackPane.margin>
+                  <Insets bottom="40.0" />
+               </StackPane.margin>
+            </TextFlow>
+            <ImageView fx:id="pImgViw" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+                <image>
+                    <Image url="@../resources/p.png" />
+                </image>
+
+                <StackPane.margin>
+                  <Insets left="20.0" />
+               </StackPane.margin>
+            </ImageView>
             </children>
         </StackPane>
     </center>

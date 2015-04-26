@@ -16,6 +16,8 @@ public class Main extends Application {
     public static String threeCrypScreenFile = "simulatorThreeLayout.fxml";
     public static String keyExchangeScreenID = "ControllerKeyExchange.java";
     public static String keyExchangeScreenFile = "simulatorKeyExchange.fxml";
+    public static String binaryScreenID = "ControllerBinary.java";
+    public static String binaryScreenFile = "simulatorBinary.fxml";
     public static String manyParticipantsScreenID = "ControllerManyParticipants.java";
     public static String manyParticipantsScreenFile = "simulatorManyParticipants.fxml";
     public static String arbitraryAlphabetScreenID = "ControllerArbitraryAlphabet.java";
@@ -48,6 +50,7 @@ public class Main extends Application {
          screenController.loadScreen(Main.manyParticipantsScreenID, Main.manyParticipantsScreenFile);
         screenController.loadScreen(Main.discoScreenID, Main.discoScreenFile);
         screenController.loadScreen(Main.votingScreenID, Main.votingScreenFile);
+        screenController.loadScreen(Main.binaryScreenID, binaryScreenFile);
 
         //sets initial screen
         screenController.setScreen(mainScreenID);

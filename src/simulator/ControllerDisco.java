@@ -9,6 +9,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.scene.text.TextFlow;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -26,11 +27,13 @@ public class ControllerDisco implements ControlTemp, Initializable, Runnable{
     @FXML
     private HBox signatureVector;
     @FXML
+    private TextFlow textFlow;
+    @FXML
     private StackPane stackPane;
     @FXML
     private ImageView elephantImgViw, clawImgViw, treeImgViw, hImgViw, thetaImgViw, snakeImgViw, messageImgViw;
     @FXML
-    private TextArea textArea, signatureVector1, signatureVector2,signatureVector3,signatureVector4,signatureVector5,signatureVector6;
+    private TextArea signatureVector1, signatureVector2,signatureVector3,signatureVector4,signatureVector5,signatureVector6;
 
 
     public void initialize(URL fxmlFileLocation, ResourceBundle resources){
@@ -42,7 +45,7 @@ public class ControllerDisco implements ControlTemp, Initializable, Runnable{
         assert stackPane != null : "fx:id=\"stackPane\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
         assert snakeImgViw != null : "fx:id=\"snakeImgViw\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
         assert elephantImgViw != null : "fx:id=\"elephantImgViw\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
-        assert textArea != null : "fx:id=\"textArea\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
+        assert textFlow != null : "fx:id=\"textFlow\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
         assert signatureVector1 != null : "fx:id=\"signatureVector1\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
         assert signatureVector2 != null : "fx:id=\"signatureVector2\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
         assert signatureVector3 != null : "fx:id=\"signatureVector3\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
@@ -64,7 +67,7 @@ public class ControllerDisco implements ControlTemp, Initializable, Runnable{
     public void run(){
 
         discoSimulation = new DiscoSimulation(backSimulatorBtn, pauseSimulatorBtn, playSimulatorBtn, stackPane,messageImgViw, thetaImgViw,
-                snakeImgViw, elephantImgViw, textArea, signatureVector,signatureVector1,signatureVector2,signatureVector3,signatureVector4,
+                snakeImgViw, elephantImgViw, textFlow, signatureVector,signatureVector1,signatureVector2,signatureVector3,signatureVector4,
                 signatureVector5,signatureVector6, clawImgViw, treeImgViw, hImgViw);
 
         playSimulatorBtn.setDisable(true);
