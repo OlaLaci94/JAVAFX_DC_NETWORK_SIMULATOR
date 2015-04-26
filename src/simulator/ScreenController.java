@@ -121,6 +121,7 @@ public class ScreenController extends StackPane
      */
     public boolean setScreen(final String name){
 
+
          //checks screen has been previously loaded
         if(screenMap.get(name)!= null)
         {
@@ -155,6 +156,7 @@ public class ScreenController extends StackPane
                 setOpacity(0.0);
 
                 getChildren().add(screenMap.get(name));
+
 
                 //animation fade in of screen
                 Timeline fadeInTimeline = new Timeline(new KeyFrame((Duration.ZERO), new KeyValue(opacityProperty, 1.0)),

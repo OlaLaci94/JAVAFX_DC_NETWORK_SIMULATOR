@@ -38,7 +38,7 @@ public class Main extends Application {
      * @throws Exception
      */
     @Override
-    public void start(final Stage primaryStage) throws Exception
+    public void start(Stage primaryStage) throws Exception
     {
         //creates new ScreenController object- the only one used within project
         screenController = new ScreenController();
@@ -54,12 +54,13 @@ public class Main extends Application {
 
         //sets initial screen
         screenController.setScreen(mainScreenID);
+
         //creates new Group and adds all of scre`enControllers components to it.
         root = new Group();
         root.getChildren().addAll(screenController);
 
-        System.out.println("size of root: "+ root.getChildren().size());
-        //creates new scene
+
+         //creates new scene
         scene = new Scene(root,1500,800);
         //binds stage and scene height and width to ensure scene covers all avaliable space
         screenController.prefHeightProperty().bind(scene.heightProperty());
@@ -68,8 +69,12 @@ public class Main extends Application {
         //sets the scene
         primaryStage.setScene(scene);
 
+
+
         //shows the stage
         primaryStage.show();
+
+        primaryStage.setTitle("Dining Cryptographers Simulator");
 
         //stops program running after user has closed the window
         primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
