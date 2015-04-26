@@ -31,7 +31,7 @@ public class ControllerDisco implements ControlTemp, Initializable, Runnable{
     @FXML
     private StackPane stackPane;
     @FXML
-    private ImageView elephantImgViw, clawImgViw, treeImgViw, hImgViw, thetaImgViw, snakeImgViw, messageImgViw;
+    private ImageView dogCryptographer, gImgViw, messageImgViw, piImgViw, eImgViw, hImgViw, functionImgViw, treeImgViw;
     @FXML
     private TextArea signatureVector1, signatureVector2,signatureVector3,signatureVector4,signatureVector5,signatureVector6;
 
@@ -43,8 +43,8 @@ public class ControllerDisco implements ControlTemp, Initializable, Runnable{
         assert pauseSimulatorBtn != null : "fx:id=\"pauseSimulatorBtn\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
         assert playSimulatorBtn != null : "fx:id=\"playSimulatorBtn\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
         assert stackPane != null : "fx:id=\"stackPane\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
-        assert snakeImgViw != null : "fx:id=\"snakeImgViw\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
-        assert elephantImgViw != null : "fx:id=\"elephantImgViw\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
+        assert dogCryptographer != null : "fx:id=\"dogCryptographer\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
+        assert gImgViw != null : "fx:id=\"gImgViw\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
         assert textFlow != null : "fx:id=\"textFlow\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
         assert signatureVector1 != null : "fx:id=\"signatureVector1\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
         assert signatureVector2 != null : "fx:id=\"signatureVector2\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
@@ -52,12 +52,13 @@ public class ControllerDisco implements ControlTemp, Initializable, Runnable{
         assert signatureVector4 != null : "fx:id=\"signatureVector4\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
         assert signatureVector5 != null : "fx:id=\"signatureVector5\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
         assert signatureVector6 != null : "fx:id=\"signatureVector6\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
-        assert clawImgViw != null : "fx:id=\"clawImgViw\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
+        assert piImgViw != null : "fx:id=\"piImgViw\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
         assert treeImgViw != null : "fx:id=\"treeImgViw\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
         assert hImgViw != null : "fx:id=\"hImgViw\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
         assert signatureVector != null : "fx:id=\"signatureVector\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
-        assert thetaImgViw != null : "fx:id=\"thetaImgViw\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
+        assert eImgViw != null : "fx:id=\"eImgViw\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
         assert messageImgViw != null : "fx:id=\"messageImgViw\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
+        assert functionImgViw != null : "fx:id=\"functionImgViw\" was not injected: check your FXML file 'simulatorKeyExchange.fxml'.";
 
 
 
@@ -66,16 +67,16 @@ public class ControllerDisco implements ControlTemp, Initializable, Runnable{
 
     public void run(){
 
-        discoSimulation = new DiscoSimulation(backSimulatorBtn, pauseSimulatorBtn, playSimulatorBtn, stackPane,messageImgViw, thetaImgViw,
-                snakeImgViw, elephantImgViw, textFlow, signatureVector,signatureVector1,signatureVector2,signatureVector3,signatureVector4,
-                signatureVector5,signatureVector6, clawImgViw, treeImgViw, hImgViw);
+        discoSimulation = new DiscoSimulation(pauseSimulatorBtn, playSimulatorBtn, backSimulatorBtn, signatureVector, textFlow, stackPane,
+                dogCryptographer, gImgViw, messageImgViw, piImgViw, eImgViw, hImgViw, functionImgViw, treeImgViw, signatureVector1,
+                signatureVector2,signatureVector3,signatureVector4,signatureVector5,signatureVector6);
 
         playSimulatorBtn.setDisable(true);
 
 
     }
 
-    public void cDSimBack()
+    public void backSim()
     {
         for(int i = 0; i<discoSimulation.tranArrList.size(); i++){
 
@@ -86,7 +87,7 @@ public class ControllerDisco implements ControlTemp, Initializable, Runnable{
         screenController.setScreen(Main.mainScreenID);
     }
 
-    public void cDSimPause()
+    public void pauseSim()
     {
         for(Transition tran: discoSimulation.tranArrList){
 
@@ -100,7 +101,7 @@ public class ControllerDisco implements ControlTemp, Initializable, Runnable{
         playSimulatorBtn.setDisable(false);
     }
 
-    public void cDSimPlay()
+    public void playSim()
     {
         for(Transition tran: discoSimulation.tranArrList){
 

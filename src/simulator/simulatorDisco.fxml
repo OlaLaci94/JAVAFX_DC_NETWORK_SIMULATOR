@@ -1,125 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
 <?import java.lang.*?>
-<?import javafx.geometry.*?>
 <?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="598.0" prefWidth="961.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="simulator.ControllerDisco">
-    <bottom>
-        <BorderPane prefHeight="70.0" prefWidth="961.0" BorderPane.alignment="CENTER">
-            <center>
-                <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-                    <items>
-                        <Button fx:id="backSimulatorBtn" mnemonicParsing="false" onAction="#cDSimBack" text="Back">
-                            <padding>
-                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                            </padding>
-                        </Button>
-                        <Button fx:id="pauseSimulatorBtn" mnemonicParsing="false" onAction="#cDSimPause" text="Pause">
-                            <padding>
-                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                            </padding>
-                        </Button>
-                        <Button fx:id="playSimulatorBtn" mnemonicParsing="false" onAction="#cDSimPlay" text="Play">
-                            <padding>
-                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                            </padding>
-                        </Button>
-                    </items>
-                </ToolBar>
-            </center>
-        </BorderPane>
-    </bottom>
-    <center>
-        <StackPane fx:id="stackPane" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-            <children>
-                <ImageView fx:id="elephantImgViw" fitHeight="200.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" visible="false" StackPane.alignment="CENTER_LEFT">
-                    <image>
-                        <Image url="@../resources/elephant.png" />
-                    </image>
-                    <StackPane.margin>
-                        <Insets bottom="10.0" left="40.0" right="10.0" top="10.0" />
-                    </StackPane.margin>
-                </ImageView>
-                <ImageView fx:id="snakeImgViw" fitHeight="264.0" fitWidth="205.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_RIGHT">
-                    <image>
-                        <Image url="@../resources/snake.png" />
-                    </image>
-                    <StackPane.margin>
-                        <Insets right="40.0" />
-                    </StackPane.margin>
-                </ImageView>
-                <HBox fx:id="signatureVector" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="900.0" visible="false" StackPane.alignment="BOTTOM_CENTER">
-                    <children>
-                        <TextArea fx:id="signatureVector1" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="250.0" text="S(1)" visible="false" />
-                        <TextArea fx:id="signatureVector2" editable="false" layoutX="210.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="250.0" text="S(2)" visible="false" />
-                        <TextArea fx:id="signatureVector3" editable="false" layoutX="360.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="250.0" text="S(3)" visible="false" />
-                        <TextArea fx:id="signatureVector4" editable="false" layoutX="310.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="250.0" text="S(4)" visible="false" />
-                        <TextArea fx:id="signatureVector5" editable="false" layoutX="460.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="250.0" text="S(5)" visible="false" />
-                        <TextArea fx:id="signatureVector6" editable="false" layoutX="610.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="250.0" text="S(6)" visible="false" />
-                    </children>
-                    <StackPane.margin>
-                        <Insets bottom="50.0" />
-                    </StackPane.margin>
-                </HBox>
-                <ImageView fx:id="clawImgViw" fitHeight="245.0" fitWidth="223.0" pickOnBounds="true" preserveRatio="true" visible="false" StackPane.alignment="BOTTOM_RIGHT">
-                    <image>
-                        <Image url="@../resources/claw.png" />
-                    </image>
-                    <StackPane.margin>
-                        <Insets bottom="50.0" left="50.0" right="50.0" />
-                    </StackPane.margin>
-                </ImageView>
-                <ImageView fx:id="treeImgViw" fitHeight="311.0" fitWidth="416.0" pickOnBounds="true" preserveRatio="true" visible="false" StackPane.alignment="CENTER_LEFT">
-                    <image>
-                        <Image url="@../resources/tree.png" />
-                    </image>
-                    <StackPane.margin>
-                        <Insets left="30.0" />
-                    </StackPane.margin>
-                </ImageView>
-                <ImageView fx:id="thetaImgViw" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" visible="false" StackPane.alignment="CENTER_RIGHT">
-                    <image>
-                        <Image url="@../resources/theta.png" />
-                    </image>
-                    <StackPane.margin>
-                        <Insets right="200.0" />
-                    </StackPane.margin>
-                </ImageView>
-                <ImageView fx:id="messageImgViw" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" visible="false" StackPane.alignment="CENTER_RIGHT">
-                    <image>
-                        <Image url="@../resources/message.png" />
-                    </image>
-                    <StackPane.margin>
-                        <Insets right="200.0" />
-                    </StackPane.margin>
-                </ImageView>
-                <ImageView fx:id="hImgViw" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" visible="false" StackPane.alignment="CENTER_LEFT">
-                    <image>
-                        <Image url="@../resources/hashFunction.png" />
-                    </image>
-                    <StackPane.margin>
-                        <Insets left="30.0" />
-                    </StackPane.margin>
-                </ImageView>
-            <TextFlow fx:id="textFlow" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="300.0" prefWidth="650.0" StackPane.alignment="BOTTOM_CENTER">
+<BorderPane maxHeight="Infinity" maxWidth="Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="584.0" prefWidth="980.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="simulator.ControllerDisco">
+   <bottom>
+      <BorderPane prefHeight="70.0" prefWidth="980.0" BorderPane.alignment="CENTER">
+         <center>
+            <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <items>
+                  <Button fx:id="backSimulatorBtn" mnemonicParsing="false" onAction="#backSim" text="Back">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="pauseSimulatorBtn" mnemonicParsing="false" onAction="#pauseSim" text="Pause">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="playSimulatorBtn" mnemonicParsing="false" onAction="#playSim" text="Play">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </Button>
+              </items>
+            </ToolBar>
+         </center>
+      </BorderPane>
+   </bottom>
+   <center>
+      <StackPane fx:id="stackPane" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="dogCryptographer" fitHeight="354.0" fitWidth="306.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+               <image>
+                  <Image url="@../resources/dog.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="gImgViw" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_CENTER">
+               <image>
+                  <Image url="@../resources/theta.png" />
+               </image>
                <StackPane.margin>
-                  <Insets bottom="40.0" />
-               </StackPane.margin>
-            </TextFlow>
-            <ImageView fx:id="pImgViw" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
-                <image>
-                    <Image url="@../resources/p.png" />
-                </image>
-
-                <StackPane.margin>
-                  <Insets left="20.0" />
+                  <Insets top="20.0" />
                </StackPane.margin>
             </ImageView>
-            </children>
-        </StackPane>
-    </center>
+            <ImageView fx:id="messageImgViw" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_CENTER">
+               <image>
+                  <Image url="@../resources/message.png" />
+               </image>
+               <StackPane.margin>
+                  <Insets top="20.0" />
+               </StackPane.margin>
+            </ImageView>
+            <ImageView fx:id="piImgViw" fitHeight="98.0" fitWidth="107.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="BOTTOM_CENTER">
+               <image>
+                  <Image url="@../resources/beta.png" />
+               </image>
+               <StackPane.margin>
+                  <Insets bottom="20.0" right="150.0" />
+               </StackPane.margin>
+            </ImageView>
+            <ImageView fx:id="eImgViw" fitHeight="94.0" fitWidth="123.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="BOTTOM_CENTER">
+               <StackPane.margin>
+                  <Insets bottom="20.0" left="150.0" />
+               </StackPane.margin>
+               <image>
+                  <Image url="@../resources/eSymbol.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="hImgViw" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_RIGHT">
+               <StackPane.margin>
+                  <Insets right="20.0" />
+               </StackPane.margin>
+               <image>
+                  <Image url="@../resources/hashFunction.png" />
+               </image></ImageView>
+            <ImageView fx:id="functionImgViw" fitHeight="140.0" fitWidth="234.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_RIGHT">
+               <StackPane.margin>
+                  <Insets top="20.0" />
+               </StackPane.margin>
+               <image>
+                  <Image url="@../resources/cipher.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="treeImgViw" fitHeight="413.0" fitWidth="496.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_RIGHT">
+               <image>
+                  <Image url="@../resources/tree.png" />
+               </image>
+            </ImageView>
+            <HBox fx:id="signatureVector" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="900.0" visible="false" StackPane.alignment="BOTTOM_CENTER">
+               <children>
+                  <TextArea fx:id="signatureVector1" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="250.0" text="" visible="false" />
+                  <TextArea fx:id="signatureVector2" editable="false" layoutX="210.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="250.0" text="" visible="false" />
+                  <TextArea fx:id="signatureVector3" editable="false" layoutX="360.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="250.0" text="" visible="false" />
+                  <TextArea fx:id="signatureVector4" editable="false" layoutX="310.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="250.0" text="" visible="false" />
+                  <TextArea fx:id="signatureVector5" editable="false" layoutX="460.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="250.0" text="" visible="false" />
+                  <TextArea fx:id="signatureVector6" editable="false" layoutX="610.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="250.0" text="" visible="false" />
+               </children>
+               <StackPane.margin>
+                  <Insets bottom="20.0" />
+               </StackPane.margin>
+            </HBox>
+            <TextFlow fx:id="textFlow" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="270.0" prefWidth="723.0" StackPane.alignment="BOTTOM_CENTER">
+               <padding>
+                  <Insets bottom="20.0" />
+               </padding>
+            </TextFlow>
+         </children>
+      </StackPane>
+   </center>
 </BorderPane>
